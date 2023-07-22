@@ -54,6 +54,10 @@ export const About = () => {
         >
           <Container>
             <Box>
+              <br />
+              <br />
+              <br />
+              <br />
               <Typography fontSize={"39px"}>
                 Бид хэн бэ? “Women Techmakers”
               </Typography>
@@ -64,8 +68,6 @@ export const About = () => {
               justifyContent={"space-between"}
               alignItems="center"
               mt={10}
-              gap={5}
-              flexWrap="wrap"
             >
               <LogoDefault />
               <Typography fontSize="20px">
@@ -84,7 +86,7 @@ export const About = () => {
             </Stack>
           </Container>
         </Stack>
-        <Stack mt={10} mb={20} alignItems="cnter" width="100%">
+        <Stack mt={10} mb={20}>
           <Title title="“Women Techmakers” төлөөлөгчид" />
           <Stack flexDirection={"row"} flexWrap="wrap" gap={10} mt={5}>
             {AboutData.map((data) => (

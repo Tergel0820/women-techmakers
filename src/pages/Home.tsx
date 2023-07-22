@@ -1,30 +1,16 @@
-import { Box, Container, Stack, Typography, useMediaQuery } from "@mui/material"
+import { Box, Container, Stack, Typography } from "@mui/material"
 import React from "react"
-import {
-  AboutUs,
-  Activity,
-  ActivityMobile,
-  Button,
-  CardItem,
-  Title,
-} from "../components"
-import background from "../assets/image/background.png"
+import { AboutUs, Activity, Button, CardItem, Title } from "../components"
+import homeback from "../assets/image/homeback.png"
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth"
 import PublicIcon from "@mui/icons-material/Public"
 import SupervisedUserCircleOutlinedIcon from "@mui/icons-material/SupervisedUserCircleOutlined"
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined"
-import activity1 from "../assets/image/activity1.png"
-import activity2 from "../assets/image/activity2.png"
-import activity3 from "../assets/image/activity3.png"
-import activity4 from "../assets/image/activity4.png"
-import { useTheme } from "@mui/material/styles"
 import {
   CommunityIcon,
   DestributeIcon,
   CalendarIcon,
   FacebookIcon,
-  DiscordIcon,
-  IG,
 } from "../assets"
 import home from "../assets/image/home.png"
 export const Home = () => {
@@ -59,41 +45,37 @@ export const Home = () => {
 
   const ActivityData = [
     {
-      icon: activity1,
-      title: "7 хоног бүр онлайнаар болох үйл ажиллагаа",
-      link: "Discord link",
-      href: "Discord link",
+      icon: "any",
+      title: "string",
+      link: "string",
+      href: "string",
     },
     {
-      icon: activity2,
-      title:
-        "Сар бүрийн сонирхолтой зочинтой уулзалт, танилын хүрээгээ нэмэх боломж",
-      link: "Event жагсаалт",
-      href: "Event жагсаалт",
+      icon: "any",
+      title: "string",
+      link: "string",
+      href: "string",
     },
     {
-      icon: activity3,
-      title:
-        "Технологийн салбарт зам гаргаад явж буй эмэгтэйчүүдийн урам зориг өгөх түүхээс",
-      link: "Postby article ",
-      href: "Postby article ",
+      icon: "any",
+      title: "string",
+      link: "string",
+      href: "string",
     },
     {
-      icon: activity4,
-      title: "IWD (International Women’s Day) арга хэмжээ",
-      link: "IWD 2023 ",
-      href: "IWD/2023 ",
+      icon: "any",
+      title: "string",
+      link: "string",
+      href: "string",
     },
   ]
 
-  const theme = useTheme()
-
-  const isSmallScreen = useMediaQuery(() => theme.breakpoints.down("sm"))
   return (
     <Container>
       <Stack alignItems={"center"} gap={15}>
-        <Stack alignItems={"center"} gap={3}>
-          <Typography fontSize={"70px"}>Women Techmakers Mongolia</Typography>
+        <img alt="" height={"100%"} src={homeback} />
+        <Stack marginTop={"-50%"} alignItems={"center"} gap={3}>
+          <Typography color={"#FDFEFE"} fontSize={"70px"}>Women Techmakers Mongolia</Typography>
           <Typography fontSize={"32px"} color="#EAEEF5" textAlign={"center"}>
             Хүн болгон технологи
             <br /> бүтээж чадна
@@ -111,12 +93,7 @@ export const Home = () => {
           </Button>
         </Stack>
         {/* -------------------------------------Бидний тухай--------------------------------- */}
-        <Stack
-          direction={"row"}
-          justifyContent="space-between"
-          width="100%"
-          flexWrap="wrap"
-        >
+        <Stack direction={"row"} marginTop={"20%"} justifyContent="space-between" width="100%">
           <Title title="Бидний тухай" />
           <Typography>
             Google компанийн дэргэдэх технологийн салбарын <br />
@@ -128,11 +105,11 @@ export const Home = () => {
         </Stack>
 
         <Stack
+          direction="row"
+          justifyContent={"space-between"}
           width="100%"
           flexWrap={"wrap"}
           mt={10}
-          direction={isSmallScreen ? "column" : "row"}
-          justifyContent={isSmallScreen ? "center" : "space-between"}
         >
           {AboutUsData.map((data) => {
             return <AboutUs data={data} />
@@ -145,14 +122,9 @@ export const Home = () => {
           alignItems={"center"}
           justifyContent="space-between"
           width={"100%"}
-          flexWrap="wrap"
         >
-          <Box
-            sx={{
-              backgroundSize: "contain",
-            }}
-          >
-            <img src={home} width="100%" />
+          <Box>
+            <img alt="" src={home} />
           </Box>
           <Typography sx={{ width: "488px" }}>
             Бид технологийн салбарын болон салбарт сонирхолтой охид
@@ -251,18 +223,14 @@ export const Home = () => {
             <Title title={" Үйл ажиллагаа"} />
           </Box>
           <Stack
-            flexDirection={!isSmallScreen ? "row" : "column"}
+            flexDirection={"row"}
             flexWrap="wrap"
             justifyContent="center"
             gap={5}
           >
-            {ActivityData.map((data) =>
-              !isSmallScreen ? (
-                <Activity data={data} />
-              ) : (
-                <ActivityMobile data={data} />
-              )
-            )}
+            {ActivityData.map((data) => (
+              <Activity data={data} />
+            ))}
           </Stack>
         </Stack>
 
@@ -303,7 +271,7 @@ export const Home = () => {
                     padding: 2,
                   }}
                 >
-                  <IG />
+                  <FacebookIcon />
                 </Box>
                 <Box
                   sx={{
@@ -312,7 +280,7 @@ export const Home = () => {
                     padding: 2,
                   }}
                 >
-                  <DiscordIcon />
+                  <FacebookIcon />
                 </Box>
               </Stack>
             </Container>

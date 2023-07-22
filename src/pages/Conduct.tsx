@@ -1,13 +1,20 @@
-import { Box, Container, Typography } from "@mui/material"
+import { Box, Container, Typography, Stack } from "@mui/material"
 import React from "react"
 
 export const Conduct = () => {
   return (
     <Container maxWidth="md">
       <Box mb={10}>
-        <Box mb={10}>
+        <Stack marginTop={"0%"} alignItems={"center"}>
+        <br/> 
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        
           <Typography fontSize={"31px"}>Code of conduct</Typography>
-        </Box>
+        <br />
         <Typography>
           Our organization is dedicated to providing a respectful, inclusive,
           and harassment-free environment for all participants, regardless of
@@ -190,6 +197,7 @@ export const Conduct = () => {
           inclusive, and harassment-free environment for all participants and
           will not tolerate any behavior that violates this Code of Conduct.
         </Typography>
+        </Stack>
       </Box>
     </Container>
   )

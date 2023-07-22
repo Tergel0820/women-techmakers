@@ -1,25 +1,29 @@
-import { Box, Container, Grid, Popover, Typography } from "@mui/material"
+import { Box, Container, Popover, Stack, Typography } from "@mui/material"
 import React, { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { LogoHeader } from "../assets"
 
-export const Header = ({ offset }: { offset: number }) => {
+export const Header = ({ offset } : { offset: number }) => {
   const navigate = useNavigate()
 
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null)
 
+ 
   useEffect(() => {
     const handleScroll = () => {
-      document.body.style.textEmphasisColor =
-        window.pageYOffset > 100 ? "#0d2a16" : "#ffffff"
-    }
+      if (window.pageYOffset > 100) {
+        document.body.style.textEmphasisColor = "#000000";
+      } else {
+        document.body.style.textEmphasisColor = "#000000";
+      }
+    };
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleClose = () => {
     setAnchorEl(null)
@@ -32,10 +36,19 @@ export const Header = ({ offset }: { offset: number }) => {
 
   const open = Boolean(anchorEl)
   const id = open ? "simple-popover" : undefined
+  
 
   return (
-    <Container>
-      <Box
+    <Container style={{
+      color: offset > 100 ? "#000000" : "#ffffff",
+      backgroundColor: offset > 100 ? "transparent" : "transparent",
+      transitionDuration: "0s",
+      position: "fixed",
+      left: "50%",
+      transform: "translate(-50%)",
+      zIndex: "100",
+    }}>
+      <Stack
         sx={{
           transitionDuration: "1s",
           backgroundColor: offset > 100 ? "white" : "transparent",
@@ -43,86 +56,82 @@ export const Header = ({ offset }: { offset: number }) => {
           paddingBottom: 3,
         }}
       >
-        <Grid
-          container
-          justifyContent="space-between"
+        <Stack
+          direction="row"
+          width={"100%"}
+          justifyContent={"space-between"}
           alignItems="center"
-          spacing={2}
         >
-          <Grid item>
-            <LogoHeader />
-          </Grid>
-          <Grid item>
-            <Box sx={{ ...style.navbar }}>
+          <LogoHeader />
+          <Box sx={{ ...style.navbar }}>
+            <Typography
+              variant="body1"
+              component="p"
+              onClick={() => navigate("/")}
+            >
+              Home
+            </Typography>
+            <Typography
+              variant="body1"
+              component="p"
+              onClick={(event: any) => setAnchorEl(event.currentTarget)}
+            >
+              IWD
+            </Typography>
+            <Popover
+              id={id}
+              open={open}
+              anchorEl={anchorEl}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+            >
               <Typography
-                variant="body1"
-                component="p"
-                onClick={() => navigate("/")}
+                sx={{ p: 2, cursor: "pointer" }}
+                onClick={() => handleIWDClick("2023")}
               >
-                Home
+                IWD 2023
               </Typography>
               <Typography
-                variant="body1"
-                component="p"
-                onClick={(event: any) => setAnchorEl(event.currentTarget)}
+                sx={{ p: 2, cursor: "pointer" }}
+                onClick={() => handleIWDClick("2022")}
               >
-                IWD
+                IWD 2022
               </Typography>
-              <Popover
-                id={id}
-                open={open}
-                anchorEl={anchorEl}
-                onClose={handleClose}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-              >
-                <Typography
-                  sx={{ p: 2, cursor: "pointer" }}
-                  onClick={() => handleIWDClick("2023")}
-                >
-                  IWD 2023
-                </Typography>
-                <Typography
-                  sx={{ p: 2, cursor: "pointer" }}
-                  onClick={() => handleIWDClick("2022")}
-                >
-                  IWD 2022
-                </Typography>
-              </Popover>
-              <Typography
-                variant="body1"
-                component="p"
-                onClick={() => navigate("/event")}
-              >
-                Event
-              </Typography>
-              <Typography
-                variant="body1"
-                component="p"
-                onClick={() => navigate("/team")}
-              >
-                Team
-              </Typography>
-              <Typography
-                variant="body1"
-                component="p"
-                onClick={() => navigate("/about")}
-              >
-                Certificate
-              </Typography>
-              <Typography
-                variant="body1"
-                component="p"
-                onClick={() => navigate("/conduct")}
-              >
-                Code of Conduct
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
-      </Box>
+            </Popover>
+            <Typography
+              variant="body1"
+              component="p"
+              onClick={() => navigate("/event")}
+            >
+              Event
+            </Typography>
+            <Typography
+              variant="body1"
+              component="p"
+              onClick={() => navigate("/team")}
+            >
+              Team
+            </Typography>
+            <Typography
+              variant="body1"
+              component="p"
+              onClick={() => navigate("/about")}
+            >
+              Certificate
+            </Typography>
+            <Typography
+              variant="body1"
+              component="p"
+              onClick={() => navigate("/conduct")}
+            >
+              Code of Conduct
+            </Typography>
+          </Box>
+        </Stack>
+      </Stack>
     </Container>
   )
 }

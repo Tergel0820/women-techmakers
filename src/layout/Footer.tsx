@@ -1,10 +1,10 @@
 import { Box, Grid, Stack, Typography } from "@mui/material"
-import { DiscordIcon, FacebookIcon, IG, LogoDefault, LogoWhite } from "../assets"
+import { FacebookIcon, LogoDefault, LogoWhite } from "../assets"
 import React from "react"
 
 export const Footer = () => {
   return (
-    <Grid container sx={{ backgroundColor: "#0748B4" }} justifyContent="center">
+    <Grid container sx={{ backgroundColor: "#0748B4" }}>
       <Grid item xs={12} md={6} lg={4} sx={{ padding: 4 }}>
         <Stack gap={6}>
           <LogoDefault />
@@ -105,7 +105,7 @@ export const Footer = () => {
                 padding: 2,
               }}
             >
-              <DiscordIcon fill="white" />
+              <FacebookIcon fill="white" />
             </Box>
             <Box
               sx={{
@@ -114,7 +114,7 @@ export const Footer = () => {
                 padding: 2,
               }}
             >
-              <IG fill="white" />
+              <FacebookIcon fill="white" />
             </Box>
           </Stack>
         </Stack>

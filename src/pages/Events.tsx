@@ -9,6 +9,10 @@ export const Events = () => {
         {/* ----------------Болох гэж буй арга хэмжээ------------------- */}
         <Stack sx={{ backgroundColor: "#F4F7FB" }} width="100vw" pb={5}>
           <Container>
+            <br />
+            <br />
+            <br />
+            <br />
             <Title title="Болох гэж буй арга хэмжээ" />
             <Stack flexWrap="wrap" direction="row">
               <Box width="365px">

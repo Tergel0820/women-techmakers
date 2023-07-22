@@ -1,5 +1,14 @@
 import React from "react"
 
 export const NotFound = () => {
-  return <div>404</div>
-}
+  return (
+    <>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div>404</div>
+    </>
+  );
+};
+

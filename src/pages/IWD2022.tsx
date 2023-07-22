@@ -6,6 +6,11 @@ export const IWD2022 = () => {
   return (
     <Container>
       <Stack alignItems={"center"}>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <Stack
           width={"100vw"}
           sx={{
@@ -19,7 +24,6 @@ export const IWD2022 = () => {
               direction="row"
               alignItems={"center"}
               justifyContent="space-between"
-              flexWrap="wrap"
             >
               <Box
                 sx={{
@@ -48,8 +52,6 @@ export const IWD2022 = () => {
           width={"100%"}
           pb={10}
           pt={10}
-          flexWrap="wrap"
-          gap={5}
         >
           <Stack gap={5}>
             <Typography>
@@ -64,9 +66,7 @@ export const IWD2022 = () => {
               Дэлгэрэнгүй
             </Button>
           </Stack>
-          <Box sx={{ width: { xl: "320px" } }}>
-            <img alt="devsummit" src={devsummit} width="100%" />
-          </Box>
+          <img alt="devsummit" src={devsummit} />
         </Stack>
 
         <Stack sx={{ backgroundColor: "#F4F7FB", pb: 8 }} width={"100vw"}>
