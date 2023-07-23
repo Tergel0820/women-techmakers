@@ -1,6 +1,6 @@
-import { Box, Stack, Typography } from "@mui/material"
-import { Answer } from "../components"
-import Image from "../assets/image/question.png"
+import { Box, Stack, Typography } from "@mui/material";
+import { Answer } from "../components";
+import Image from "../assets/image/question.png";
 
 export const FAQ = () => {
   return (
@@ -23,5 +23,5 @@ export const FAQ = () => {
         <Answer answer="helo" question="hi" />
       </Box>
     </Stack>
-  )
-}
+  );
+};

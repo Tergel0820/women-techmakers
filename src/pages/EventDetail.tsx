@@ -1,14 +1,14 @@
-import { Box, Container, Stack, Typography } from "@mui/material"
-import { Album, Button, CardItem, TabItem, Title } from "../components"
-import React from "react"
-import hackethon from "../assets/image/hacketoon.png"
+import { Box, Container, Stack, Typography } from "@mui/material";
+import { Album, Button, CardItem, TabItem, Title } from "../components";
+import React from "react";
+import hackethon from "../assets/image/hackathon.png";
 export const EventDetail = () => {
   const panelComponent = [
     <Box>panel1</Box>,
     <Box>panel2</Box>,
     <Box>panel3</Box>,
     <Box>panel4</Box>,
-  ]
+  ];
   return (
     <Container>
       <Stack alignItems={"center"} gap={7}>
@@ -118,5 +118,5 @@ export const EventDetail = () => {
         </Stack>
       </Stack>
     </Container>
-  )
-}
+  );
+};

@@ -16,7 +16,7 @@ export const AboutUs = ({ data }: { data: AboutType }) => {
           sx={{
             color: "#518FF5",
             fontSize: "40px",
-            fontWeight: 500,
+            fontWeight: 600,
           }}
         >
           {data.number}

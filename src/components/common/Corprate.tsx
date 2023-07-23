@@ -1,7 +1,7 @@
-import React from "react"
-import { Box, Stack } from "@mui/material"
+import React from "react";
+import { Box, Stack, Typography } from "@mui/material";
 
-import { Title } from "./Title"
+import { Title } from "./Title";
 
 export const Corprate = ({ data }: { data?: any }) => {
   return (
@@ -9,24 +9,31 @@ export const Corprate = ({ data }: { data?: any }) => {
       direction="row"
       flexWrap={"wrap"}
       justifyContent="space-between"
-      gap={3}
+      gap={2}
     >
       {Object.keys(data).map((item, index) => (
-        <Box key={index}>
-          <Title title={item} />
+        <Box key={index} gap={2}>
+          <Typography fontSize={20} fontWeight={500}>
+            {item}
+          </Typography>
           <Stack
             direction="row"
-            spacing={2}
             flexWrap={"wrap"}
-            gap={3}
+            gap={8}
+            mb={5}
             justifyContent="center"
           >
             {data[item].map((picture: any, index: number) => (
-              <img key={index} src={picture} alt={`Image ${index}`} />
+              <img
+                height={60}
+                key={index}
+                src={picture}
+                alt={`Image ${index}`}
+              />
             ))}
           </Stack>
         </Box>
       ))}
     </Stack>
-  )
-}
+  );
+};

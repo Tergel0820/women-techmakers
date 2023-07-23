@@ -1,19 +1,19 @@
-import * as React from "react"
-import Typography from "@mui/material/Typography"
-import Box from "@mui/material/Box"
-import { Button } from "../core"
-import { Stack } from "@mui/material"
-import { useMediaQuery } from "@mui/material"
-import { useTheme } from "@mui/material/styles"
+import * as React from "react";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { Button } from "../core";
+import { Stack } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 interface TabPanelProps {
-  children?: React.ReactNode
-  index: number
-  value: number
+  children?: React.ReactNode;
+  index: number;
+  value: number;
 }
 
 function CustomTabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props
+  const { children, value, index, ...other } = props;
 
   return (
     <div
@@ -24,36 +24,37 @@ function CustomTabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ pt: 3, pb: 8 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
     </div>
-  )
+  );
 }
 
 export const TabItem = ({ panel }: { panel: any }) => {
-  const [value, setValue] = React.useState<number>(0)
-  const theme = useTheme()
+  const [value, setValue] = React.useState<number>(1);
+  const theme = useTheme();
 
-  const isSmallScreen = useMediaQuery(() => theme.breakpoints.down("sm"))
+  const isSmallScreen = useMediaQuery(() => theme.breakpoints.down("sm"));
 
   const handleChange = (newValue: number) => {
-    setValue(newValue)
-  }
+    setValue(newValue);
+  };
 
   return (
-    <Stack spacing={2}>
+    <Stack spacing={2} width={"100%"}>
       <Stack
         direction={isSmallScreen ? "column" : "row"}
-        justifyContent={isSmallScreen ? "center" : "space-between"}
-        gap={2}
+        width={"100%"}
+        justifyContent={"space-between"}
         flexWrap="wrap"
         alignItems={"center"}
       >
         <Button
           variant={value === 0 ? "primary" : "secondary"}
           onClick={() => handleChange(0)}
+          disabled
         >
           Workshop
         </Button>
@@ -76,7 +77,7 @@ export const TabItem = ({ panel }: { panel: any }) => {
           Judges
         </Button>
       </Stack>
-      <Stack>
+      <Stack width={"100%"}>
         {panel.map((item: any, index: number) => {
           return (
             <Stack key={index} flexWrap="wrap" flexDirection="column">
@@ -84,9 +85,9 @@ export const TabItem = ({ panel }: { panel: any }) => {
                 {item}
               </CustomTabPanel>
             </Stack>
-          )
+          );
         })}
       </Stack>
     </Stack>
-  )
-}
+  );
+};
