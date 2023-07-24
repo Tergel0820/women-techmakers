@@ -9,10 +9,15 @@ interface AboutType {
 
 export const AboutUs = ({ data }: { data: AboutType }) => {
   return (
-    <Stack justifyContent={"center"} alignItems={"center"} gap={1}>
+    <Stack
+      justifyContent={"center"}
+      alignItems={"center"}
+      gap={1}
+      width={{ xs: 123, sm: 180 }}
+    >
       <Box
-        height={130}
-        width={130}
+        height={{ xs: 54, sm: 130 }}
+        width={{ xs: 54, sm: 130 }}
         display={"flex"}
         justifyContent={"center"}
         alignItems={"center"}
@@ -21,20 +26,13 @@ export const AboutUs = ({ data }: { data: AboutType }) => {
       </Box>
       <Stack alignItems={"center"}>
         <Typography
-          sx={{
-            color: "#518FF5",
-            fontSize: "40px",
-            fontWeight: 600,
-          }}
+          color={"#518FF5"}
+          fontSize={{ xs: 20, sm: 40 }}
+          fontWeight={{ xs: 700, sm: 600 }}
         >
           {data.number}
         </Typography>
-        <Typography
-          sx={{
-            fontSize: "22px",
-            fontWeight: 300,
-          }}
-        >
+        <Typography fontSize={{ xs: 15.5, sm: 22 }} fontWeight={300}>
           {data.text}
         </Typography>
       </Stack>

@@ -1,5 +1,5 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar, Title } from "../components";
 import Khongorzul from "../assets/image/khongorzul.jpeg";
 import zulaa from "../assets/image/zulaa.png";
@@ -43,17 +43,22 @@ export const About = () => {
       role: "",
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <Container>
       <Stack alignItems={"center"}>
         <Stack
           sx={{ backgroundColor: "#F4F7FB" }}
           pt={10}
-          pb={15}
+          pb={{ xs: 0, sm: 15 }}
           width="100vw"
         >
           <Container>
-            <Typography pt={12} fontSize={39} fontWeight={500}>
+            <Typography pt={{ xs: 3, sm: 12 }} fontSize={39} fontWeight={500}>
               Бид хэн бэ?
             </Typography>
             <Stack
@@ -63,15 +68,25 @@ export const About = () => {
               alignItems="center"
               mt={2}
             >
-              <img src={WomenTechmakers} height={357} />
+              <Box display={{ xs: "none", sm: "flex" }}>
+                <img src={WomenTechmakers} height={357} />
+              </Box>
               <Stack width={692}>
-                <Typography fontSize={20} fontWeight={400}>
+                <Typography
+                  fontSize={20}
+                  fontWeight={400}
+                  textAlign={{ xs: "center", sm: "start" }}
+                >
                   Google компанийн дэргэдэх технологийн салбарын эмэгтэйчүүдийг
                   дэмжих зорилготой Women Techmakers хөтөлбөрийг Монголд 2021
                   оноос эхлэн Women Techmakers Mongolia коммунити албан ёсоор
                   хүргэж байна.
                 </Typography>
-                <Typography fontSize={20} fontWeight={400}>
+                <Typography
+                  fontSize={20}
+                  fontWeight={400}
+                  textAlign={{ xs: "center", sm: "start" }}
+                >
                   Бид технологийн салбарын болон салбарт сонирхолтой охид
                   эмэгтэйчүүдийг дэмжих, дэлхий нийтэд дуу хоолойг нь хүргэх,
                   урам зориг өгөх, хүйсийн тэнцвэрт байдлыг нэмэгдүүлэх
@@ -81,13 +96,14 @@ export const About = () => {
             </Stack>
           </Container>
         </Stack>
-        <Stack mt={8} mb={20}>
+        <Stack mt={{ xs: 2, sm: 8 }} mb={{ xs: 8, sm: 20 }}>
           <Title title="“Women Techmakers” төлөөлөгчид" />
           <Stack
             flexDirection={"row"}
             justifyContent={"space-between"}
+            alignItems={"center"}
             flexWrap="wrap"
-            gap={8}
+            gap={{ xs: 3, sm: 8 }}
             mt={5}
           >
             {AboutData.map((data) => (

@@ -1,6 +1,6 @@
-import React from "react";
-import { Box, Container, Stack, Typography } from "@mui/material";
-import { CardItem, Title } from "../components";
+import React, { useEffect } from "react";
+import { Container, Stack, Typography } from "@mui/material";
+import { CardItem, PaginationCard, Title } from "../components";
 import Meeting10 from "../assets/image/meeting10.png";
 import WeeklyMeeting9 from "../assets/image/weeklyMeeting9.png";
 import WeeklyMeeting8 from "../assets/image/weeklyMeeting8.png";
@@ -18,6 +18,7 @@ export const Events = () => {
     {
       title: "Meeting #10",
       image: Meeting10,
+      meeting: "Weekly_Meeting#10",
       name: "Namuun Togoobor#8584",
       location: "By our Discord channel",
       date: "2023, march, 19:00",
@@ -79,74 +80,75 @@ export const Events = () => {
     {
       title: "Happy New Year",
       image: OtherEvent1,
-      meeting: "WTM meeting#1",
-      name: "А.Хулангоо & Б.Манд",
-      location: "Bilig Vegan Bristro&Dining restaurant",
-      date: "2023 Sep 14, 17:00",
+      meeting: "Online meeting",
+      name: "WTM Mongolia",
+      location: "Our Discord channel",
+      date: "2022 Dec 29, 19:00",
     },
     {
       title: "Women Entrepreneur day",
       image: OtherEvent2,
-      meeting: "WTM meeting#1",
-      name: "А.Хулангоо & Б.Манд",
-      location: "Bilig Vegan Bristro&Dining restaurant",
-      date: "2023 Sep 14, 17:00",
+      name: "Hub innivation center, ЦойлогсодZ",
+      location: "Hub Innivation Center",
+      date: "2022 Oct 26, 18:40",
     },
     {
-      title: "Women in startup",
+      title: "Devfest 2022 Ulaanbaatar",
       image: OtherEvent3,
-      meeting: "WTM meeting#1",
-      name: "А.Хулангоо & Б.Манд",
-      location: "Bilig Vegan Bristro&Dining restaurant",
-      date: "2023 Sep 14, 17:00",
+      name: "WTM Mongolia, GDG Ulaanbaatar",
+      location: "Our Discord channel",
+      date: "2022 Jan 26, 19:00",
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <Container>
       <Stack alignItems={"center"}>
         {/* ----------------Болох гэж буй арга хэмжээ------------------- */}
-        <Stack sx={{ backgroundColor: "#F4F7FB" }} width="100vw" pb={6} pt={14}>
+        <Stack
+          bgcolor={{ xs: "#fff", sm: "#F4F7FB" }}
+          width="100vw"
+          pb={6}
+          pt={{ xs: 12, sm: 14 }}
+        >
           <Container>
-            <Title title="Болох гэж буй арга хэмжээ" />
-            <Stack flexWrap="wrap" direction="row">
-              {IncomingEventsData.map((el) => (
-                <CardItem data={el} />
-              ))}
+            <Stack mt={{ xs: 0, sm: "16px" }} gap={{ xs: "20px", sm: "48px" }}>
+              <Title title="Болох гэж буй арга хэмжээ" />
+              <PaginationCard data={IncomingEventsData} />
             </Stack>
           </Container>
         </Stack>
 
         {/* ----------------Бидний явуулсан арга хэмжээ------------------- */}
-        <Stack width={"100%"}>
+        <Stack width={"100%"} mt={"32px"} mb={"64px"}>
           <Title title="Бидний явуулсан арга хэмжээ" />
         </Stack>
 
         {/* ----------------7 хоног бүрийн уулзалт------------------- */}
-        <Stack width={"100%"}>
+        <Stack width={"100%"} mb={5}>
           <Title title="7 хоног бүрийн уулзалт" />
-          <Typography>
+          <Typography mt={"16px"}>
             Манай Discord групп-д нэгдээд хүссэн сургалт уулзантандаа онлайнаар
             үнэгүй оролцох боломжтой.
           </Typography>
-          <Stack
-            direction={"row"}
-            justifyContent="space-between"
-            mt={5}
-            gap={2}
-          >
-            {WeeklyMeetingsData.map((el) => (
-              <CardItem data={el} />
-            ))}
+          <Stack mt={6}>
+            <PaginationCard data={WeeklyMeetingsData} />
           </Stack>
-
-          {/* ----------------Carousel------------------- */}
         </Stack>
 
         {/* ----------------Сар бүрийн уулзалт------------------- */}
-        <Stack sx={{ backgroundColor: "#F4F7FB" }} width="100vw" pb={5} mt={10}>
+        <Stack sx={{ backgroundColor: "#F4F7FB" }} width="100vw" pb={5} pt={8}>
           <Container>
             <Title title="Сар бүрийн уулзалт" />
-            <Typography fontSize={20}>
+            <Typography
+              width={{ xs: "100%", sm: "80%" }}
+              fontSize={20}
+              mt={"24px"}
+            >
               Технологийн салбар дахь сонирхолтой зочны түүх, туршлагаас сонсож,
               мөн өөрийн хүрээллээ тэлэхийг хүсвэл сар бүр зохион байгуулагдах
               уулзалтанд хүрэлцэн ирэхийг урьж байна. Үйл ажиллагааны мэдээллийг
@@ -166,27 +168,21 @@ export const Events = () => {
               </Link>{" "}
               хуудсуудаас цаг алдалгүй аваарай.
             </Typography>
-            <Stack direction={"row"} mt={7} gap={2}>
-              {MonthlyMeetingsData.map((el) => (
-                <CardItem data={el} />
-              ))}
+            <Stack mt={7}>
+              <PaginationCard data={MonthlyMeetingsData} />
             </Stack>
           </Container>
         </Stack>
 
         {/* ----------------Бусад эвэнт------------------- */}
-        <Stack width={"100%"} mb={10}>
+        <Stack
+          width={"100%"}
+          pt={"32px"}
+          pb={5}
+          gap={{ xs: "16px", sm: "48px" }}
+        >
           <Title title="Бусад эвэнт" />
-          <Stack
-            width={"100%"}
-            direction={"row"}
-            justifyContent={"space-between"}
-            gap={2}
-          >
-            {OtherEventsData.map((el) => (
-              <CardItem data={el} />
-            ))}
-          </Stack>
+          <PaginationCard data={OtherEventsData} />
         </Stack>
       </Stack>
     </Container>

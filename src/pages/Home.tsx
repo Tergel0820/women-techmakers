@@ -27,23 +27,41 @@ import "../styles/arrow-down.css";
 import { Header, Loading } from "layout";
 import { Curve } from "assets/icon/curve";
 import { Link } from "react-router-dom";
+import { TypeAnimation } from "react-type-animation";
 
 export const Home = () => {
   const AboutUsData = [
     {
-      icon: <CalendarMonthIcon sx={{ color: "#FF6363", fontSize: "110px" }} />,
+      icon: (
+        <CalendarMonthIcon
+          sx={{
+            color: "#FF6363",
+            fontSize: window.innerWidth > 500 ? "90px" : "50px",
+          }}
+        />
+      ),
       text: "оноос хойш",
       number: "2021",
     },
     {
-      icon: <PublicIcon sx={{ color: "#FAC543", fontSize: "110px" }} />,
+      icon: (
+        <PublicIcon
+          sx={{
+            color: "#FAC543",
+            fontSize: window.innerWidth > 500 ? "90px" : "50px",
+          }}
+        />
+      ),
       text: "IWD арга хэмжээ",
       number: "2+",
     },
     {
       icon: (
         <SupervisedUserCircleOutlinedIcon
-          sx={{ color: "#2FC9BD", fontSize: "110px" }}
+          sx={{
+            color: "#2FC9BD",
+            fontSize: window.innerWidth > 500 ? "90px" : "50px",
+          }}
         />
       ),
       text: "Уулзалт, эвэнт",
@@ -51,7 +69,12 @@ export const Home = () => {
     },
     {
       icon: (
-        <PeopleAltOutlinedIcon sx={{ color: "#4D81BD", fontSize: "110px" }} />
+        <PeopleAltOutlinedIcon
+          sx={{
+            color: "#4D81BD",
+            fontSize: window.innerWidth > 500 ? "90px" : "50px",
+          }}
+        />
       ),
       number: "500+",
       text: "Оролцогчид",
@@ -63,27 +86,27 @@ export const Home = () => {
       icon: Activity1,
       title: "7 хоног бүр онлайнаар болох үйл ажиллагаа",
       link: "Discord серверт нэгдэх",
-      href: "string",
+      href: "https://discord.gg/TqwEknFg7u",
     },
     {
       icon: Activity2,
       title:
         "Сар бүрийн сонирхолтой зочинтой уулзалт, танилын хүрээгээ тэлэх боломж",
       link: "Юу болж байна?",
-      href: "string",
+      href: "/event",
     },
     {
       icon: Activity3,
       title:
         "Технологийн салбарт зам гаргаад явж буй эмэгтэйчүүдийн урам зориг өгөх түүхээс",
       link: "Postby нийтлэл унших",
-      href: "string",
+      href: "/",
     },
     {
       icon: Activity4,
       title: "IWD жил бүрийн арга хэмжээ (International Women’s Day)",
       link: "IWD 23 эргэн тойронд",
-      href: "string",
+      href: "/IWD/2023",
     },
   ];
 
@@ -115,6 +138,10 @@ export const Home = () => {
       date: "2023 Sep 14, 17:00",
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
 
   return (
     <Container>
@@ -149,20 +176,37 @@ export const Home = () => {
             <Typography
               color={"#FDFEFE"}
               fontSize={{ xs: 24, sm: 24, md: 70 }}
+              fontWeight={500}
               textAlign={"center"}
             >
               Women Techmakers Mongolia
             </Typography>
-            <Typography
-              fontSize={{ xs: 18, sm: 32, md: 32 }}
-              color="#EAEEF5"
-              textAlign={"center"}
+            <Stack
+              width={"100%"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
             >
-              Хүн болгон технологи
-              <br /> бүтээж чадна
-            </Typography>
-            {/* <Button /> */}
-            <Link to={"/event"} style={{ zIndex: 1, textDecoration: "none" }}>
+              <TypeAnimation
+                sequence={["", 800, "Хүн болгон технологи бүтээж чадна"]}
+                speed={10}
+                style={{
+                  width: window.innerWidth < 500 ? "208px" : "360px",
+                  height: window.innerWidth < 500 ? "44px" : "76px",
+                  fontSize: window.innerWidth < 500 ? "18px" : "32px",
+                  display: "inline-block",
+                  color: "#fff",
+                  fontWeight: 400,
+                  textAlign: "center",
+                  lineHeight: "120%",
+                  letterSpacing: "0.64px",
+                }}
+              />
+            </Stack>
+            <Link
+              to={"/event"}
+              style={{ zIndex: 1, textDecoration: "none", marginTop: "16px" }}
+            >
               <Button
                 sx={{
                   backgroundColor: "white",
@@ -207,10 +251,10 @@ export const Home = () => {
           width="100%"
           gap={3}
         >
-          <Typography fontSize={31}>Бидний тухай</Typography>
+          <Typography fontSize={{ xs: 20, sm: 31 }}>Бидний тухай</Typography>
           <Typography
             width={{ xs: "100%", sm: 500 }}
-            fontSize={20}
+            fontSize={{ xs: 16, sm: 20 }}
             fontWeight={400}
             textAlign={{ xs: "center", sm: "start" }}
           >
@@ -222,11 +266,12 @@ export const Home = () => {
 
         <Stack
           direction="row"
-          justifyContent={"space-between"}
+          justifyContent={{ xs: "center", sm: "space-between" }}
           width="100%"
           flexWrap={"wrap"}
-          mt={20}
-          mb={16}
+          mt={{ xs: 4, sm: 20 }}
+          mb={{ xs: 12, sm: 16 }}
+          gap={{ xs: 4, sm: 0 }}
         >
           {AboutUsData.map((data) => {
             return <AboutUs data={data} />;
@@ -235,25 +280,32 @@ export const Home = () => {
 
         {/* -------------------------------------picture--------------------------------- */}
         <Stack
-          direction="row"
+          direction={"row"}
           alignItems={"center"}
           justifyContent="space-between"
           width={"100%"}
           mb={12}
         >
           <Box
-            width={"45%"}
+            width={{ xs: "48%", sm: "44%" }}
+            height={{ xs: 228, sm: 276 }}
             overflow={"hidden"}
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
+            borderRadius={"10px"}
           >
-            <img width={"100%"} src={home} />
+            {window.innerWidth > 500 ? (
+              <img width={"100%"} src={home} />
+            ) : (
+              <img height={"100%"} src={home} />
+            )}
           </Box>
           <Typography
-            sx={{ width: "40%" }}
+            width={{ xs: "48%", sm: "42%" }}
             fontSize={{ xs: 16, sm: 20 }}
             fontWeight={400}
+            lineHeight={{ xs: "normal" }}
           >
             Бид технологийн салбарын болон салбарт сонирхолтой охид
             эмэгтэйчүүдийг дэмжих, олон нийтэд дуу хоолойг нь хүргэх, урам зориг
@@ -363,7 +415,12 @@ export const Home = () => {
             width={"100%"}
           >
             {ActivityData.map((data) => (
-              <Activity data={data} />
+              <Link
+                to={data.href}
+                style={{ textDecoration: "none", color: "#000" }}
+              >
+                <Activity data={data} />
+              </Link>
             ))}
           </Stack>
         </Stack>

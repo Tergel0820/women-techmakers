@@ -6,24 +6,22 @@ export const Input = ({
   placeholder,
   value,
   setValue,
-  width = 438,
 }: {
   title: string;
   placeholder: string;
   value: string;
   setValue: () => {};
-  width: number;
 }) => {
   const inputHandler = (e: any) => {
     setValue(e.target.value);
   };
 
   return (
-    <Box width={width} display={"flex"} flexDirection={"column"} gap={"4px"}>
+    <Box width={"100%"} display={"flex"} flexDirection={"column"} gap={"4px"}>
       <Typography>{title}</Typography>
       <input
         style={{
-          width: width,
+          width: "100%",
           height: 56,
           border: "none",
           backgroundColor: "#F4F7FB",

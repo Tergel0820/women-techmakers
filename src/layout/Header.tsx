@@ -1,14 +1,16 @@
 import { Box, Container, Popover, Stack, Typography } from "@mui/material";
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { LogoHeader } from "../assets";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { LogoHeader, MenuIcon } from "../assets";
+import MobileLogo from "../assets/image/mobileLogo.png";
+import { Close } from "@mui/icons-material";
 
 export const Header = ({ theme }: { theme: string }) => {
   const navigate = useNavigate();
 
-  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
-    null
-  );
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+
+  const [menu, setMenu] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +65,25 @@ export const Header = ({ theme }: { theme: string }) => {
             justifyContent={"space-between"}
             alignItems="center"
           >
-            <LogoHeader onClick={() => navigate("/")} />
+            {window.innerWidth > 500 ? (
+              <Box
+                height={"100%"}
+                display={"flex"}
+                justifyContent={"center"}
+                alignItems={"center"}
+              >
+                <LogoHeader />
+              </Box>
+            ) : (
+              <Box
+                height={62}
+                display={"flex"}
+                justifyContent={"center"}
+                alignItems={"center"}
+              >
+                <img height={"100%"} src={MobileLogo} />
+              </Box>
+            )}
             <Box sx={{ ...style.navbar }} display={{ xs: "none", sm: "flex" }}>
               <Typography
                 variant="body1"
@@ -131,6 +151,132 @@ export const Header = ({ theme }: { theme: string }) => {
                 Code of Conduct
               </Typography> */}
             </Box>
+            <Box
+              display={{ xs: "flex", sm: "none" }}
+              onClick={() => setMenu(true)}
+            >
+              <MenuIcon />
+            </Box>
+            <Stack
+              direction={"column"}
+              height={"100vh"}
+              width={280}
+              bgcolor={"#fff"}
+              position={"fixed"}
+              top={0}
+              right={menu ? 0 : -280}
+              padding={"16px"}
+              style={{ transition: "0.2s right" }}
+              gap={3}
+              pt={2}
+            >
+              <Stack
+                width={"100%"}
+                direction={"row"}
+                justifyContent={"flex-end"}
+                alignItems={"center"}
+              >
+                <Box onClick={() => setMenu(false)}>
+                  <Close />
+                </Box>
+              </Stack>
+              <Stack
+                width={"100%"}
+                direction={"row"}
+                justifyContent={"flex-end"}
+                alignItems={"center"}
+              >
+                <Link
+                  to={"/"}
+                  style={{ textDecoration: "none" }}
+                  onClick={() => setMenu(false)}
+                >
+                  <Typography fontSize={20} color={"#000"}>
+                    Home
+                  </Typography>
+                </Link>
+              </Stack>
+              <Stack
+                width={"100%"}
+                direction={"row"}
+                justifyContent={"flex-end"}
+                alignItems={"center"}
+              >
+                <Link
+                  to={"/IWD/2022"}
+                  style={{ textDecoration: "none" }}
+                  onClick={() => setMenu(false)}
+                >
+                  <Typography fontSize={20} color={"#000"}>
+                    IWD 2022
+                  </Typography>
+                </Link>
+              </Stack>
+              <Stack
+                width={"100%"}
+                direction={"row"}
+                justifyContent={"flex-end"}
+                alignItems={"center"}
+              >
+                <Link
+                  to={"/IWD/2023"}
+                  style={{ textDecoration: "none" }}
+                  onClick={() => setMenu(false)}
+                >
+                  <Typography fontSize={20} color={"#000"}>
+                    IWD 2023
+                  </Typography>
+                </Link>
+              </Stack>
+              <Stack
+                width={"100%"}
+                direction={"row"}
+                justifyContent={"flex-end"}
+                alignItems={"center"}
+              >
+                <Link
+                  to={"/event"}
+                  style={{ textDecoration: "none" }}
+                  onClick={() => setMenu(false)}
+                >
+                  <Typography fontSize={20} color={"#000"}>
+                    Event
+                  </Typography>
+                </Link>
+              </Stack>
+              <Stack
+                width={"100%"}
+                direction={"row"}
+                justifyContent={"flex-end"}
+                alignItems={"center"}
+              >
+                <Link
+                  to={"/team"}
+                  style={{ textDecoration: "none" }}
+                  onClick={() => setMenu(false)}
+                >
+                  <Typography fontSize={20} color={"#000"}>
+                    Team
+                  </Typography>
+                </Link>
+              </Stack>
+              <Stack
+                width={"100%"}
+                direction={"row"}
+                justifyContent={"flex-end"}
+                alignItems={"center"}
+              >
+                <Link
+                  to={"/certificate"}
+                  style={{ textDecoration: "none" }}
+                  onClick={() => setMenu(false)}
+                >
+                  <Typography fontSize={20} color={"#000"}>
+                    Certificate
+                  </Typography>
+                </Link>
+              </Stack>
+            </Stack>
           </Stack>
         </Stack>
       </Container>
@@ -140,7 +286,6 @@ export const Header = ({ theme }: { theme: string }) => {
 
 const style = {
   navbar: {
-    display: "flex",
     flexDirection: "row",
     alignItems: "center",
     gap: 2,

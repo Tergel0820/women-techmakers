@@ -1,12 +1,19 @@
-import { Box, Typography } from "@mui/material"
-import React from "react"
+import { Box, Stack, Typography } from "@mui/material";
+import React from "react";
 
 export const Title = ({ title }: { title: string }) => {
   return (
-    <Box sx={{ mt: 5, mb: 4 }}>
-      <Typography sx={{ fontSize: "31px", fontWeight: 500 }}>
+    <Stack width={"100%"}>
+      <Box
+        display={{ xs: "flex", sm: "none" }}
+        height={11}
+        width={34}
+        bgcolor={"#518FF5"}
+        borderRadius={6}
+      ></Box>
+      <Typography fontWeight={500} fontSize={{ xs: 25, sm: 31 }}>
         {title}
       </Typography>
-    </Box>
-  )
-}
+    </Stack>
+  );
+};

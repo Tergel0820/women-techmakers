@@ -1,7 +1,11 @@
 import { Box, Container, Typography, Stack } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 
 export const Conduct = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <Container maxWidth="md">
       <Box mb={10}>

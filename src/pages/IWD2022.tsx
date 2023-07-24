@@ -1,10 +1,16 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { Album, Button, CardItem, Title } from "../components";
-import React from "react";
+import React, { useEffect } from "react";
 import devsummit from "../assets/image/devsummit.png";
 import Card1 from "../assets/image/card1.png";
 import Card2 from "../assets/image/card2.png";
 import Card3 from "../assets/image/card3.png";
+import Dev1 from "../assets/image/dev1.png";
+import Dev2 from "../assets/image/dev2.png";
+import Dev3 from "../assets/image/dev3.png";
+import Dev4 from "../assets/image/dev4.png";
+import Dev5 from "../assets/image/dev5.png";
+import Dev6 from "../assets/image/dev6.png";
 import { Link } from "react-router-dom";
 
 export const IWD2022 = () => {
@@ -34,6 +40,32 @@ export const IWD2022 = () => {
       date: "2023 Sep 14, 17:00",
     },
   ];
+
+  const albumData = [
+    {
+      img: Dev1,
+    },
+    {
+      img: Dev2,
+    },
+    {
+      img: Dev3,
+    },
+    {
+      img: Dev4,
+    },
+    {
+      img: Dev5,
+    },
+    {
+      img: Dev6,
+    },
+  ];
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <Container>
       <Stack alignItems={"center"}>
@@ -118,7 +150,7 @@ export const IWD2022 = () => {
         <Stack sx={{ backgroundColor: "#F4F7FB", pb: 8 }} width={"100vw"}>
           <Container>
             <Title title="Холбоотой зургууд" />
-            <Album />
+            <Album data={albumData} startSmall={true} />
           </Container>
         </Stack>
 

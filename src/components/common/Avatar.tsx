@@ -23,8 +23,8 @@ export const Avatar = ({ data }: { data: AvatarType }) => {
   return (
     <Stack justifyContent={"center"} alignItems={"center"} gap={3}>
       <Box
-        width={300}
-        height={300}
+        width={{ xs: 153, sm: 300 }}
+        height={{ xs: 153, sm: 300 }}
         borderRadius={"50%"}
         overflow={"hidden"}
         position={"relative"}
@@ -81,9 +81,11 @@ export const Avatar = ({ data }: { data: AvatarType }) => {
           </Link>
         </Stack>
       </Box>
-      <Stack alignItems={"center"} gap={1}>
+      <Stack alignItems={"center"} gap={1} height={{ xs: 84 }}>
         <Typography fontWeight={600}>{data.name}</Typography>
-        <Typography>{data.role}</Typography>
+        <Typography width={{ xs: 153, sm: "100%" }} textAlign={"center"}>
+          {data.role}
+        </Typography>
       </Stack>
     </Stack>
   );

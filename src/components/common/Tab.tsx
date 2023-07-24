@@ -43,15 +43,16 @@ export const TabItem = ({ panel }: { panel: any }) => {
   };
 
   return (
-    <Stack spacing={2} width={"100%"}>
+    <Stack spacing={{ xs: "16px", sm: 2 }} width={"100%"}>
       <Stack
-        direction={isSmallScreen ? "column" : "row"}
+        direction={"row"}
+        gap={{ xs: "8px", sm: 2 }}
         width={"100%"}
         justifyContent={"space-between"}
-        flexWrap="wrap"
         alignItems={"center"}
       >
         <Button
+          width={window.innerWidth < 500 && "22%"}
           variant={value === 0 ? "primary" : "secondary"}
           onClick={() => handleChange(0)}
           disabled
@@ -59,18 +60,21 @@ export const TabItem = ({ panel }: { panel: any }) => {
           Workshop
         </Button>
         <Button
+          width={window.innerWidth < 500 && "22%"}
           variant={value === 1 ? "primary" : "secondary"}
           onClick={() => handleChange(1)}
         >
           Speakers
         </Button>
         <Button
+          width={window.innerWidth < 500 && "22%"}
           variant={value === 2 ? "primary" : "secondary"}
           onClick={() => handleChange(2)}
         >
           Mentor
         </Button>
         <Button
+          width={window.innerWidth < 500 && "22%"}
           variant={value === 3 ? "primary" : "secondary"}
           onClick={() => handleChange(3)}
         >

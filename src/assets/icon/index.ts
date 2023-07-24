@@ -9,3 +9,4 @@ export * from "./arrow-down";
 export * from "./location";
 export * from "./information";
 export * from "./linkedin";
+export * from "./menu";
