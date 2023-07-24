@@ -53,9 +53,9 @@ export const Header = ({ theme }: { theme: string }) => {
           sx={{
             transitionDuration: "1s",
             backgroundColor: theme,
-            paddingTop: 3,
-            paddingBottom: 3,
           }}
+          pt={{ xs: 0, sm: 3 }}
+          pb={{ xs: 0, sm: 3 }}
         >
           <Stack
             direction="row"
@@ -64,7 +64,7 @@ export const Header = ({ theme }: { theme: string }) => {
             alignItems="center"
           >
             <LogoHeader onClick={() => navigate("/")} />
-            <Box sx={{ ...style.navbar }}>
+            <Box sx={{ ...style.navbar }} display={{ xs: "none", sm: "flex" }}>
               <Typography
                 variant="body1"
                 component="p"
@@ -119,7 +119,7 @@ export const Header = ({ theme }: { theme: string }) => {
               <Typography
                 variant="body1"
                 component="p"
-                onClick={() => navigate("/about")}
+                onClick={() => navigate("/certificate")}
               >
                 Certificate
               </Typography>

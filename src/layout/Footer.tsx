@@ -58,9 +58,9 @@ export const Footer = () => {
               <Typography sx={{ color: "#D7D7D7", fontSize: "14px", mb: 1 }}>
                 Certificate
               </Typography>
-              <Typography sx={{ color: "#D7D7D7", fontSize: "14px", mb: 1 }}>
+              {/* <Typography sx={{ color: "#D7D7D7", fontSize: "14px", mb: 1 }}>
                 Code of Conduct
-              </Typography>
+              </Typography> */}
             </Stack>
           </Grid>
 

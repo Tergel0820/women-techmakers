@@ -1,16 +1,24 @@
-import { Box, Stack, Typography } from "@mui/material"
-import React from "react"
+import { Box, Stack, Typography } from "@mui/material";
+import React from "react";
 
 interface AboutType {
-  icon: any
-  text: string
-  number: string
+  icon: any;
+  text: string;
+  number: string;
 }
 
 export const AboutUs = ({ data }: { data: AboutType }) => {
   return (
-    <Stack justifyContent={"center"} alignItems="center" gap={1}>
-      {data.icon}
+    <Stack justifyContent={"center"} alignItems={"center"} gap={1}>
+      <Box
+        height={130}
+        width={130}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
+        {data.icon}
+      </Box>
       <Stack alignItems={"center"}>
         <Typography
           sx={{
@@ -31,5 +39,5 @@ export const AboutUs = ({ data }: { data: AboutType }) => {
         </Typography>
       </Stack>
     </Stack>
-  )
-}
+  );
+};

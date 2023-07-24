@@ -7,3 +7,5 @@ export * from "./discord";
 export * from "./instagram";
 export * from "./arrow-down";
 export * from "./location";
+export * from "./information";
+export * from "./linkedin";

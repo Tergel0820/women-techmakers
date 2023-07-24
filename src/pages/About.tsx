@@ -1,7 +1,7 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import React from "react";
 import { Avatar, Title } from "../components";
-import Hongorzul from "../assets/image/avatar1.png";
+import Khongorzul from "../assets/image/khongorzul.jpeg";
 import zulaa from "../assets/image/zulaa.png";
 import zaya from "../assets/image/zaya.png";
 import hulan1 from "../assets/image/hulan1.png";
@@ -12,7 +12,7 @@ import WomenTechmakers from "../assets/image/womenTechmakersLogo.png";
 export const About = () => {
   const AboutData = [
     {
-      image: Hongorzul,
+      image: Khongorzul,
       name: "Хонгорзул",
       role: "Machine Learning Engineer",
     },

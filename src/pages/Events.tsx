@@ -105,7 +105,7 @@ export const Events = () => {
     <Container>
       <Stack alignItems={"center"}>
         {/* ----------------Болох гэж буй арга хэмжээ------------------- */}
-        <Stack sx={{ backgroundColor: "#F4F7FB" }} width="100vw" pb={5} pt={12}>
+        <Stack sx={{ backgroundColor: "#F4F7FB" }} width="100vw" pb={6} pt={14}>
           <Container>
             <Title title="Болох гэж буй арга хэмжээ" />
             <Stack flexWrap="wrap" direction="row">
@@ -177,8 +177,12 @@ export const Events = () => {
         {/* ----------------Бусад эвэнт------------------- */}
         <Stack width={"100%"} mb={10}>
           <Title title="Бусад эвэнт" />
-
-          <Stack direction={"row"} gap={2}>
+          <Stack
+            width={"100%"}
+            direction={"row"}
+            justifyContent={"space-between"}
+            gap={2}
+          >
             {OtherEventsData.map((el) => (
               <CardItem data={el} />
             ))}

@@ -11,7 +11,7 @@ export const CardItem = ({ data }: { data?: any }) => {
   const navigate = useNavigate();
   return (
     <Card
-      sx={{ maxWidth: "370px" }}
+      sx={{ maxWidth: "380px" }}
       onClick={() => navigate(`/${data?.name || "questions"}`)}
     >
       <CardActionArea>

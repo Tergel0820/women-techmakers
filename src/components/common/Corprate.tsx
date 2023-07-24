@@ -1,8 +1,6 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 
-import { Title } from "./Title";
-
 export const Corprate = ({ data }: { data?: any }) => {
   return (
     <Stack

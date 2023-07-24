@@ -21,17 +21,21 @@ export const Activity = ({ data }: { data: ActivityProps }) => {
           boxShadow: "4px 4px 8px #CCCCCC",
         },
       }}
+      border={{ xs: "1px solid #D7DEEA", sm: "0.5px solid #CCCCCC" }}
+      bgcolor={{ xs: "#F4F7FB", sm: "#fff" }}
+      borderRadius={"10px"}
+      height={{ sm: 348 }}
       direction="row"
       justifyContent="center"
       alignItems="center"
       gap={5}
-      padding={3}
+      padding={{ xs: "10px", sm: 3 }}
     >
       <Box
         borderRadius={"50%"}
         overflow={"hidden"}
-        height={200}
-        width={200}
+        height={{ xs: 60, sm: 200 }}
+        width={{ xs: 60, sm: 200 }}
         display={"flex"}
         justifyContent={"center"}
         alignItems={"center"}
@@ -95,9 +99,6 @@ export const ActivityMobile = ({ data }: { data: ActivityProps }) => {
 
 const style = {
   container: {
-    border: "0.5px solid #CCCCCC",
-    borderRadius: "10px",
-    height: "348px",
     transition: "border-color 0.3s, cursor 0.3s, box-shadow 0.3s", // Add transition for smooth hover effect
   },
   containerMobile: {

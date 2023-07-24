@@ -6,10 +6,17 @@ import { Header } from "./Header";
 
 export const Layout = ({ offset }: { offset: number }) => {
   const location = useLocation();
-  const hideFooterOnRoutes = ["/questions"];
+  const showFooterOnRoutes = [
+    "/",
+    "/IWD/2022",
+    "/IWD/2023",
+    "/event",
+    "/team",
+    "/certificate",
+  ];
   const hideHeaderOnRoutes = ["/"];
 
-  const shouldHideFooter = hideFooterOnRoutes.includes(location.pathname);
+  const shouldShowFooter = showFooterOnRoutes.includes(location.pathname);
   const shouldHideHeader = hideHeaderOnRoutes.includes(location.pathname);
 
   return (
@@ -22,7 +29,7 @@ export const Layout = ({ offset }: { offset: number }) => {
       <Box>
         <Outlet />
       </Box>
-      {!shouldHideFooter && <Footer />}
+      {shouldShowFooter && <Footer />}
     </Box>
   );
 };
