@@ -16,7 +16,11 @@ export const PaginationCard = ({ data }: { data: any }) => {
 
   return (
     <Stack width={"100%"} gap={"48px"}>
-      <Stack direction={"row"} gap={2} height={345}>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        gap={2}
+        height={{ sm: 345 }}
+      >
         {_DATA.currentData().map((el) => (
           <CardItem data={el} />
         ))}

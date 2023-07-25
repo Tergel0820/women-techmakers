@@ -65,7 +65,8 @@ export const Album = ({
               closeAfterTransition
             >
               <img
-                height={"80%"}
+                height={window.innerWidth > 500 && "80%"}
+                width={window.innerWidth < 500 && "90%"}
                 style={{ outline: "none" }}
                 src={image}
                 onClick={handleClose}

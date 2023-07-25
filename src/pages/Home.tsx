@@ -284,7 +284,7 @@ export const Home = () => {
           alignItems={"center"}
           justifyContent="space-between"
           width={"100%"}
-          mb={12}
+          mb={{ xs: "40px", sm: 12 }}
         >
           <Box
             width={{ xs: "48%", sm: "44%" }}
@@ -313,9 +313,16 @@ export const Home = () => {
           </Typography>
         </Stack>
         {/* -------------------------------------Зорилго--------------------------------- */}
-        <Stack sx={{ backgroundColor: "#F4F7FB", width: "100vw", pb: 10 }}>
+        <Stack
+          bgcolor={{ xs: "#fff", sm: "#F4F7FB" }}
+          sx={{ width: "100vw" }}
+          pt={{ sm: "32px" }}
+          pb={{ sm: "100px" }}
+        >
           <Container>
-            <Title title="Зорилго" />
+            <Typography fontSize={{ xs: 20, sm: 31 }} fontWeight={500}>
+              Зорилго
+            </Typography>
             <Stack
               width={"100%"}
               direction="row"
@@ -329,22 +336,23 @@ export const Home = () => {
                 <Box
                   sx={{
                     backgroundColor: "#EAEEF5",
-                    width: "150px",
-                    height: "150px",
-                    borderRadius: "100%",
+                    borderRadius: "50%",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                   }}
+                  width={{ xs: 90, sm: 150 }}
+                  height={{ xs: 90, sm: 150 }}
+                  p={{ xs: "21px", sm: "35px" }}
                 >
-                  <img height={80} width={80} src={Image1} />
+                  <img height={"100%"} width={"100%"} src={Image1} />
                 </Box>
                 <Typography
                   sx={{
-                    fontSize: "22px",
                     fontWeight: 300,
                     textAlign: "center",
                   }}
+                  fontSize={{ xs: 14, sm: 22 }}
                 >
                   Нээлттэй, олныг хамарсан <br /> хүрээлэл бий болгох
                 </Typography>
@@ -353,22 +361,23 @@ export const Home = () => {
                 <Box
                   sx={{
                     backgroundColor: "#EAEEF5",
-                    width: "150px",
-                    height: "150px",
-                    borderRadius: "100%",
+                    borderRadius: "50%",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                   }}
+                  width={{ xs: 90, sm: 150 }}
+                  height={{ xs: 90, sm: 150 }}
+                  p={{ xs: "21px", sm: "35px" }}
                 >
-                  <img height={80} width={80} src={Image2} />
+                  <img height={"100%"} width={"100%"} src={Image2} />
                 </Box>
                 <Typography
                   sx={{
-                    fontSize: "22px",
                     fontWeight: 300,
                     textAlign: "center",
                   }}
+                  fontSize={{ xs: 14, sm: 22 }}
                 >
                   Бодит хэрэгцээт мэдээллээр <br /> хангах
                 </Typography>
@@ -377,22 +386,23 @@ export const Home = () => {
                 <Box
                   sx={{
                     backgroundColor: "#EAEEF5",
-                    width: "150px",
-                    height: "150px",
-                    borderRadius: "100%",
+                    borderRadius: "50%",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                   }}
+                  width={{ xs: 90, sm: 150 }}
+                  height={{ xs: 90, sm: 150 }}
+                  p={{ xs: "21px", sm: "35px" }}
                 >
-                  <img height={80} width={80} src={Image3} />
+                  <img height={"100%"} width={"100%"} src={Image3} />
                 </Box>
                 <Typography
                   sx={{
-                    fontSize: "22px",
                     fontWeight: 300,
                     textAlign: "center",
                   }}
+                  fontSize={{ xs: 14, sm: 22 }}
                 >
                   Үйл ажиллагаа арга хэмжээ <br />
                   зохион байгуулах
@@ -402,16 +412,14 @@ export const Home = () => {
           </Container>
         </Stack>
         {/* -------------------------------------Үйл ажиллагаа--------------------------------- */}
-        <Stack mt={10} mb={10} width={"100%"}>
-          <Typography fontSize={{ xs: "20px", sm: "31px" }}>
-            Үйл ажиллагаа
-          </Typography>
+        <Stack mt={{ xs: 8, sm: 10 }} mb={10} width={"100%"}>
+          <Typography fontSize={{ xs: 20, sm: 31 }}>Үйл ажиллагаа</Typography>
           <Stack
             flexDirection={"row"}
             flexWrap="wrap"
             justifyContent="center"
             gap={2}
-            mt={10}
+            mt={{ xs: 3, sm: 10 }}
             width={"100%"}
           >
             {ActivityData.map((data) => (
@@ -524,9 +532,9 @@ export const Home = () => {
         <Stack
           sx={{
             backgroundColor: "#F4F7FB",
-            paddingTop: "74px",
-            paddingBottom: "74px",
           }}
+          pt={{ xs: "32px", sm: "74px" }}
+          pb={{ xs: "32px", sm: "74px" }}
           width="100vw"
         >
           <Container>

@@ -52,15 +52,13 @@ export const About = () => {
     <Container>
       <Stack alignItems={"center"}>
         <Stack
-          sx={{ backgroundColor: "#F4F7FB" }}
-          pt={10}
-          pb={{ xs: 0, sm: 15 }}
+          bgcolor={{ xs: "#fff", sm: "#F4F7FB" }}
+          pt={{ xs: 12, sm: 20 }}
+          pb={{ xs: 4, sm: 15 }}
           width="100vw"
         >
           <Container>
-            <Typography pt={{ xs: 3, sm: 12 }} fontSize={39} fontWeight={500}>
-              Бид хэн бэ?
-            </Typography>
+            <Title title="Бид хэн бэ?" />
             <Stack
               direction={"row"}
               width="100%"
@@ -96,7 +94,7 @@ export const About = () => {
             </Stack>
           </Container>
         </Stack>
-        <Stack mt={{ xs: 2, sm: 8 }} mb={{ xs: 8, sm: 20 }}>
+        <Stack mt={{ xs: 2, sm: 8 }} mb={{ xs: 2, sm: 20 }}>
           <Title title="“Women Techmakers” төлөөлөгчид" />
           <Stack
             flexDirection={"row"}

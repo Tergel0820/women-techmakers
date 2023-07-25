@@ -237,7 +237,7 @@ export const Footer = () => {
           }}
         >
           <img width={"100%"} src={MobileLogo} />
-          <Stack direction="row" gap={2} mt={2}>
+          <Stack direction="row" gap={"20px"} mt={"8px"}>
             <Link to={"https://www.facebook.com/wtmmongolia"}>
               <Box
                 sx={{
@@ -287,7 +287,7 @@ export const Footer = () => {
               </Box>
             </Link>
           </Stack>
-          <Stack mt={2} gap={1}>
+          <Stack mt={"40px"} gap={"16px"}>
             <Typography textAlign={"center"} fontSize={16} fontWeight={600}>
               Хамтран ажиллах
             </Typography>

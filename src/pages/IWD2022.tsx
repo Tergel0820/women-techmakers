@@ -1,5 +1,5 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
-import { Album, Button, CardItem, Title } from "../components";
+import { Album, Button, CardItem, Title, PaginationCard } from "../components";
 import React, { useEffect } from "react";
 import devsummit from "../assets/image/devsummit.png";
 import Card1 from "../assets/image/card1.png";
@@ -69,33 +69,33 @@ export const IWD2022 = () => {
   return (
     <Container>
       <Stack alignItems={"center"}>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <Stack
           width={"100vw"}
-          sx={{
-            backgroundColor: "#F4F7FB",
-            pt: 10,
-            pb: 10,
-          }}
+          bgcolor={{ xs: "#fff", sm: "#F4F7FB" }}
+          pt={{ xs: 10, sm: 20 }}
+          pb={{ xs: 4, sm: 8 }}
         >
           <Container>
             <Stack
-              direction="row"
+              direction={{ xs: "column", sm: "row" }}
               alignItems={"center"}
-              justifyContent="space-between"
+              justifyContent={{ sm: "space-between" }}
+              gap={2}
             >
               <Box
                 sx={{
-                  width: "452px",
-                  height: "452px",
                   backgroundColor: "#F5D76E",
                 }}
-              />
-              <Typography width={590} fontSize="20px" fontWeight={300}>
+                width={{ xs: "100%", sm: 452 }}
+                height={{ xs: 156, sm: 452 }}
+                borderRadius={{ xs: "10px", sm: 0 }}
+              ></Box>
+              <Typography
+                width={{ xs: "100%", sm: 590 }}
+                fontSize={{ xs: 16, sm: 20 }}
+                fontWeight={300}
+                textAlign={{ xs: "center", sm: "start" }}
+              >
                 Дэлхийн 100 гаруй оронд үйл ажиллагаагаа явуулдаг Women
                 Techmakers коммунити нь Олон улсын эмэгтэйчүүдийн эрхийг
                 хамгаалах өдрийг тохиолдуулан International Women’s Day буюу IWD
@@ -109,14 +109,15 @@ export const IWD2022 = () => {
         </Stack>
 
         <Stack
-          direction="row"
+          direction={{ xs: "column-reverse", sm: "row" }}
           alignItems={"center"}
           justifyContent="space-between"
           width={"100%"}
-          pb={10}
-          pt={10}
+          pb={{ xs: 4, sm: 10 }}
+          pt={{ xs: 4, sm: 10 }}
+          gap={2}
         >
-          <Stack gap={5}>
+          <Stack gap={{ xs: 2, sm: 5 }}>
             <Typography>
               IWD22 арга хэмжээг Монголд анх удаа
               <br />
@@ -135,8 +136,8 @@ export const IWD2022 = () => {
             </Button>
           </Stack>
           <Stack
-            height={360}
-            width={692}
+            height={{ xs: 166, sm: 360 }}
+            width={{ xs: "100%", sm: 692 }}
             overflow={"hidden"}
             borderRadius={"10px"}
             display={"flex"}
@@ -147,20 +148,23 @@ export const IWD2022 = () => {
           </Stack>
         </Stack>
 
-        <Stack sx={{ backgroundColor: "#F4F7FB", pb: 8 }} width={"100vw"}>
+        <Stack
+          sx={{ backgroundColor: "#F4F7FB" }}
+          width={"100vw"}
+          pt={5}
+          pb={5}
+        >
           <Container>
-            <Title title="Холбоотой зургууд" />
-            <Album data={albumData} startSmall={true} />
+            <Stack gap={2}>
+              <Title title="Холбоотой зургууд" />
+              <Album data={albumData} startSmall={true} />
+            </Stack>
           </Container>
         </Stack>
 
-        <Stack sx={{ mb: 10 }} width={"100%"}>
+        <Stack mt={4} mb={10} gap={6} width={"100%"}>
           <Title title="Сүүлд болсон арга хэмжээ" />
-          <Stack direction="row" justifyContent="space-between" gap={2}>
-            {LatestEventsData.map((el) => (
-              <CardItem data={el} />
-            ))}
-          </Stack>
+          <PaginationCard data={LatestEventsData} />
         </Stack>
       </Stack>
     </Container>
