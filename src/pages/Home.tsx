@@ -325,10 +325,9 @@ export const Home = () => {
             </Typography>
             <Stack
               width={"100%"}
-              direction="row"
+              direction={{ xs: "column", sm: "row" }}
               justifyContent={{ xs: "center", sm: "space-between" }}
               alignItems={{ xs: "default", sm: "center" }}
-              flexWrap="wrap"
               mt={{ xs: 2, sm: 6 }}
               gap={2}
             >
