@@ -1,6 +1,13 @@
 import { Box, Container, Stack, Typography, CardMedia } from "@mui/material";
 import React, { useEffect } from "react";
-import { AboutUs, Activity, Button, CardItem, Title } from "../components";
+import {
+  AboutUs,
+  Activity,
+  Button,
+  CardItem,
+  PaginationCard,
+  Title,
+} from "../components";
 import homeback from "../assets/image/background.png";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PublicIcon from "@mui/icons-material/Public";
@@ -510,20 +517,12 @@ export const Home = () => {
         </Stack>
 
         {/* -------------------------------------Сүүлд болсон арга хэмжээ--------------------------------- */}
-        <Stack width={"100%"} mt={{ xs: 3, sm: 10 }} mb={{ xs: 6, sm: 12 }}>
+        <Stack width={"100%"} mt={{ xs: 3, sm: 8 }} mb={{ xs: 6, sm: 12 }}>
           <Typography fontSize={{ xs: "20px", sm: "31px" }}>
             Сүүлд болсон арга хэмжээ
           </Typography>
-          <Stack
-            width={"100%"}
-            direction={{ xs: "column", sm: "row" }}
-            justifyContent="space-between"
-            mt={{ xs: 3, sm: 8 }}
-            gap={{ xs: 4, sm: 2 }}
-          >
-            {CardData.map((el) => (
-              <CardItem data={el} />
-            ))}
+          <Stack mt={{ xs: 2, sm: 6 }}>
+            <PaginationCard data={CardData} />
           </Stack>
         </Stack>
 

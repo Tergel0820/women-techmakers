@@ -60,7 +60,7 @@ export const TabItem = ({ data }: { data: any }) => {
       <Box
         width={"100%"}
         overflow={"hidden"}
-        style={{ overflowX: "scroll" }}
+        style={{ overflowX: window.innerWidth < 600 && "scroll" }}
         display={"flex"}
         justifyContent={{ sm: "center" }}
       >
