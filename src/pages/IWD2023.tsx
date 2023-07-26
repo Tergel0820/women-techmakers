@@ -26,6 +26,9 @@ import Judge4 from "../assets/image/judge4.jpg";
 import Judge5 from "../assets/image/judge5.jpg";
 import Mentor2 from "../assets/image/mentor2.jpg";
 import Mentor3 from "../assets/image/mentor3.jpg";
+import Mentor5 from "../assets/image/mentor5.jpeg";
+import Mentor6 from "../assets/image/mentor6.jpg";
+import Mentor7 from "../assets/image/mentor7.jpeg";
 import IWD2Image from "../assets/image/iwd2.png";
 import Corprate1 from "../assets/image/corprate1.png";
 import Corprate2 from "../assets/image/corprate2.png";
@@ -40,186 +43,6 @@ import Card2 from "../assets/image/card2.png";
 import Card3 from "../assets/image/card3.png";
 
 export const IWD2023 = () => {
-  const panelComponent = [
-    undefined,
-    <Box width={"100%"} overflow={"hidden"} style={{ overflowX: "scroll" }}>
-      <Stack direction="row" justifyContent={"space-between"} gap={2}>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={"100%"} src={speaker1} alt="1" />
-        </Box>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={"100%"} src={speaker2} alt="2" />
-        </Box>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={"100%"} src={speaker3} alt="3" />
-        </Box>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={"100%"} src={speaker4} alt="4" />
-        </Box>
-      </Stack>
-    </Box>,
-    <Box width={"100%"} overflow={"hidden"} style={{ overflowX: "scroll" }}>
-      <Stack
-        direction="row"
-        justifyContent={"space-between"}
-        gap={3}
-        flexWrap={"wrap"}
-      >
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={341} src={speaker4} alt="1" />
-        </Box>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={341} src={speaker1} alt="2" />
-        </Box>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={341} src={Judge3} alt="3" />
-        </Box>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={341} src={Judge4} alt="4" />
-        </Box>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: 341 }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={"100%"} src={Judge5} alt="4" />
-        </Box>
-      </Stack>
-    </Box>,
-    <Box width={"100%"} overflow={"hidden"} style={{ overflowX: "scroll" }}>
-      <Stack
-        direction="row"
-        justifyContent={"space-between"}
-        gap={3}
-        flexWrap={"wrap"}
-      >
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={341} src={Judge1} alt="1" />
-        </Box>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={341} src={speaker1} alt="2" />
-        </Box>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={341} src={Judge3} alt="3" />
-        </Box>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: "100%" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={341} src={Judge4} alt="4" />
-        </Box>
-        <Box
-          width={{ xs: 120, sm: 270 }}
-          height={{ xs: 168, sm: 341 }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          overflow={"hidden"}
-          borderRadius={{ xs: "10px", sm: 0 }}
-        >
-          <img height={"100%"} src={Judge5} alt="4" />
-        </Box>
-      </Stack>
-    </Box>,
-    ,
-  ];
   const CorprateData = {
     "Хамтран ажиллагч байгууллагууд": [Corprate1, Corprate2],
     "Дэмжигч байгууллагууд": [Corprate3, Corprate4, Corprate5],
@@ -275,9 +98,9 @@ export const IWD2023 = () => {
 
   const TabData = {
     Workshop: [],
-    Speaker: [speaker1, speaker2, speaker3, speaker4],
-    Mentor: [speaker4, Mentor2, Mentor3, Judge4],
-    Judges: [Judge1, speaker4, Judge3, Judge4, Judge5],
+    Speaker: [speaker4, speaker3, speaker2, speaker1],
+    Mentor: [speaker4, Mentor2, Mentor3, Judge4, Mentor5, Mentor6, Mentor7],
+    Judges: [Judge1, speaker1, Judge3, Judge4, Judge5],
   };
 
   useEffect(() => {
@@ -528,7 +351,7 @@ export const IWD2023 = () => {
             </Stack>
           </Container>
         </Stack>
-        <TabItem panel={panelComponent} data={TabData} />
+        <TabItem data={TabData} />
         <Stack
           sx={{ backgroundColor: "#F4F7FB" }}
           width="100vw"
@@ -539,7 +362,7 @@ export const IWD2023 = () => {
           <Container>
             <Stack gap={2}>
               <Title title="Холбоотой зургууд" />
-              <Album data={albumData} />
+              <Album data={albumData} startSmall={false} />
             </Stack>
           </Container>
         </Stack>

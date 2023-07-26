@@ -57,18 +57,23 @@ export const TabItem = ({ data }: { data: any }) => {
           </Button>
         ))}
       </Stack>
-      <Box width={"100%"} overflow={"hidden"} style={{ overflowX: "scroll" }}>
+      <Box
+        width={"100%"}
+        overflow={"hidden"}
+        style={{ overflowX: "scroll" }}
+        display={"flex"}
+        justifyContent={{ sm: "center" }}
+      >
         {Object.values(data).map((item, index) => (
           <CustomTabPanel value={value} index={index}>
             <Stack
               direction="row"
-              justifyContent={"space-between"}
-              gap={{ xs: 2, sm: 3 }}
+              gap={{ xs: 2, sm: "20px" }}
               flexWrap={{ sm: "wrap" }}
             >
               {item.map((e) => (
                 <Box
-                  width={270}
+                  width={{ xs: 120, sm: 270 }}
                   height={{ xs: 168, sm: 341 }}
                   minWidth={120}
                   display={"flex"}
@@ -78,9 +83,10 @@ export const TabItem = ({ data }: { data: any }) => {
                   borderRadius={{ xs: "10px", sm: 0 }}
                 >
                   <img
-                    height={"100%"}
                     src={e}
                     alt="1"
+                    width={"100%"}
+                    height={"100%"}
                     style={{ objectFit: "cover" }}
                   />
                 </Box>
