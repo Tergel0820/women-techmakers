@@ -43,22 +43,22 @@ export const EventDetail = () => {
   return (
     <>
       <Container>
-        <Stack alignItems={"center"} gap={7}>
-          <Stack sx={{ backgroundColor: "#F4F7FB" }} width="100vw">
+        <Stack alignItems={"center"} gap={{ xs: 0, sm: 7 }}>
+          <Stack bgcolor={{ xs: "#fff", sm: "#F4F7FB" }} width="100vw">
             <Container>
-              <Stack mt={16}>
+              <Stack mt={{ xs: 12, sm: 16 }}>
                 <Title title="Бидний явуулсан арга хэмжээ" />
               </Stack>
               <Stack
-                direction="row"
+                direction={{ xs: "column-reverse", sm: "row" }}
                 alignItems={"center"}
                 justifyContent="space-between"
                 width="100%"
                 pb={10}
-                pt={10}
+                pt={{ xs: 4, sm: 10 }}
                 gap={2}
               >
-                <Stack width={"42%"}>
+                <Stack width={{ xs: "100%", sm: "42%" }}>
                   <Typography
                     fontSize={25}
                     fontWeight={500}
@@ -73,21 +73,30 @@ export const EventDetail = () => {
                     монголд "Women's Online Safety" сэдэвт хакатон байдлаар
                     амжилттай болж өнгөрлөө.
                   </Typography>
-                  <Stack mt={"78px"}>
+                  <Stack mt={{ xs: "16px", sm: "78px" }}>
                     <Button sx={{ width: "170px", backgroundColor: "#518FF5" }}>
                       Дэлгэрэнгүй
                     </Button>
                   </Stack>
                 </Stack>
-
-                <img width={590} alt="hackathon" src={hackathon} />
+                <Box
+                  width={{ xs: "100%", sm: 590 }}
+                  overflow={"hidden"}
+                  borderRadius={{ xs: "10px", sm: 0 }}
+                >
+                  <img width={"100%"} alt="hackathon" src={hackathon} />
+                </Box>
               </Stack>
             </Container>
           </Stack>
 
           <Stack width="100%">
             <Title title="Хаана, Хэзээ" />
-            <Stack direction={"row"} justifyContent="space-between" mt={5}>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              justifyContent="space-between"
+              mt={5}
+            >
               <Stack
                 direction="row"
                 alignItems="center"
@@ -147,9 +156,9 @@ export const EventDetail = () => {
             </Stack>
           </Stack>
 
-          <Stack width="100%" mt={2}>
+          {/* <Stack width="100%" mt={2}>
             <TabItem panel={panelComponent} />
-          </Stack>
+          </Stack> */}
 
           <Stack
             sx={{ backgroundColor: "#F4F7FB", pb: 8 }}
@@ -164,18 +173,23 @@ export const EventDetail = () => {
             </Container>
           </Stack>
 
-          <Stack width={"100%"}>
+          <Stack width={"100%"} pt={{ xs: 4 }}>
             <Title title="Хамтран зохион байгуулсан" />
             <Stack
               height={96}
               direction={"row"}
               alignItems={"center"}
-              gap={6}
-              mt={4}
-              mb={6}
+              flexWrap={"wrap"}
+              gap={{ xs: 2, sm: 6 }}
+              mt={{ xs: 0, sm: 4 }}
+              mb={{ xs: 2, sm: 6 }}
             >
-              <img height={"70%"} src={WomenTechmakersLogo} />
-              <img height={"100%"} src={BeerNightStudioLogo} />
+              <Box height={{ xs: "40px", sm: "70%" }}>
+                <img height={"100%"} src={WomenTechmakersLogo} />
+              </Box>
+              <Box height={{ xs: "50px", sm: "100%" }}>
+                <img height={"100%"} src={BeerNightStudioLogo} />
+              </Box>
             </Stack>
           </Stack>
         </Stack>

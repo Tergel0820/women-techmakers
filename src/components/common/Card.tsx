@@ -12,25 +12,58 @@ export const CardItem = ({ data }: { data?: any }) => {
   return (
     <Card
       sx={{
-        maxWidth: "380px",
+        width: window.innerWidth > 500 ? "380px" : "100%",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
       }}
       onClick={() => navigate(`/event/${data?.meeting || "questions"}`)}
     >
       <CardActionArea>
-        <Box width={"100%"} height={221} overflow={"hidden"}>
-          <CardMedia component="img" image={data.image} />
+        <Box
+          height={191}
+          width={"100%"}
+          overflow={"hidden"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
+          <CardMedia
+            component="img"
+            image={data.image}
+            width={"100%"}
+            height={"100%"}
+            style={{ objectFit: "cover" }}
+          />
         </Box>
-        <CardContent>
-          <Typography sx={{ fontSize: "13px", color: "#8690A2" }}>
-            {data.meeting}
-          </Typography>
-          <Typography color={"#518FF5"} fontSize={20} fontWeight={600}>
+        <CardContent
+          style={{ margin: 6, padding: 0, marginLeft: 16, marginRight: 16 }}
+        >
+          <Box height={"18px"}>
+            <Typography
+              sx={{ fontSize: "13px", color: "#8690A2" }}
+              lineHeight={"140%"}
+            >
+              {data.meeting}
+            </Typography>
+          </Box>
+          <Typography
+            color={"#518FF5"}
+            fontSize={20}
+            fontWeight={600}
+            lineHeight={"150%"}
+            textOverflow={"ellipsis"}
+            whiteSpace={"nowrap"}
+            overflow={"hidden"}
+          >
             “{data.title}”
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            lineHeight={"140%"}
+            mt={"12px"}
+            mb={"12px"}
+          >
             {data.name}
           </Typography>
           <Stack direction="row" justifyContent="space-between">

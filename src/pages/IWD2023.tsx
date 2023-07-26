@@ -2,8 +2,8 @@ import { Box, Container, Stack, Typography } from "@mui/material";
 import {
   Album,
   Button,
-  CardItem,
   Corprate,
+  PaginationCard,
   TabItem,
   Title,
 } from "../components";
@@ -20,6 +20,12 @@ import speaker1 from "../assets/image/speakers1.png";
 import speaker2 from "../assets/image/speakers2.png";
 import speaker3 from "../assets/image/speakers3.png";
 import speaker4 from "../assets/image/speakers4.png";
+import Judge1 from "../assets/image/judge1.jpg";
+import Judge3 from "../assets/image/judge3.jpeg";
+import Judge4 from "../assets/image/judge4.jpg";
+import Judge5 from "../assets/image/judge5.jpg";
+import Mentor2 from "../assets/image/mentor2.jpg";
+import Mentor3 from "../assets/image/mentor3.jpg";
 import IWD2Image from "../assets/image/iwd2.png";
 import Corprate1 from "../assets/image/corprate1.png";
 import Corprate2 from "../assets/image/corprate2.png";
@@ -35,7 +41,7 @@ import Card3 from "../assets/image/card3.png";
 
 export const IWD2023 = () => {
   const panelComponent = [
-    <Box></Box>,
+    undefined,
     <Box width={"100%"} overflow={"hidden"} style={{ overflowX: "scroll" }}>
       <Stack direction="row" justifyContent={"space-between"} gap={2}>
         <Box
@@ -45,7 +51,7 @@ export const IWD2023 = () => {
           justifyContent={"center"}
           alignItems={"center"}
           overflow={"hidden"}
-          borderRadius={"10px"}
+          borderRadius={{ xs: "10px", sm: 0 }}
         >
           <img height={"100%"} src={speaker1} alt="1" />
         </Box>
@@ -56,7 +62,7 @@ export const IWD2023 = () => {
           justifyContent={"center"}
           alignItems={"center"}
           overflow={"hidden"}
-          borderRadius={"10px"}
+          borderRadius={{ xs: "10px", sm: 0 }}
         >
           <img height={"100%"} src={speaker2} alt="2" />
         </Box>
@@ -67,7 +73,7 @@ export const IWD2023 = () => {
           justifyContent={"center"}
           alignItems={"center"}
           overflow={"hidden"}
-          borderRadius={"10px"}
+          borderRadius={{ xs: "10px", sm: 0 }}
         >
           <img height={"100%"} src={speaker3} alt="3" />
         </Box>
@@ -78,14 +84,141 @@ export const IWD2023 = () => {
           justifyContent={"center"}
           alignItems={"center"}
           overflow={"hidden"}
-          borderRadius={"10px"}
+          borderRadius={{ xs: "10px", sm: 0 }}
         >
           <img height={"100%"} src={speaker4} alt="4" />
         </Box>
       </Stack>
     </Box>,
-    <Box></Box>,
-    <Box></Box>,
+    <Box width={"100%"} overflow={"hidden"} style={{ overflowX: "scroll" }}>
+      <Stack
+        direction="row"
+        justifyContent={"space-between"}
+        gap={3}
+        flexWrap={"wrap"}
+      >
+        <Box
+          width={{ xs: 120, sm: 270 }}
+          height={{ xs: 168, sm: "100%" }}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          overflow={"hidden"}
+          borderRadius={{ xs: "10px", sm: 0 }}
+        >
+          <img height={341} src={speaker4} alt="1" />
+        </Box>
+        <Box
+          width={{ xs: 120, sm: 270 }}
+          height={{ xs: 168, sm: "100%" }}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          overflow={"hidden"}
+          borderRadius={{ xs: "10px", sm: 0 }}
+        >
+          <img height={341} src={speaker1} alt="2" />
+        </Box>
+        <Box
+          width={{ xs: 120, sm: 270 }}
+          height={{ xs: 168, sm: "100%" }}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          overflow={"hidden"}
+          borderRadius={{ xs: "10px", sm: 0 }}
+        >
+          <img height={341} src={Judge3} alt="3" />
+        </Box>
+        <Box
+          width={{ xs: 120, sm: 270 }}
+          height={{ xs: 168, sm: "100%" }}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          overflow={"hidden"}
+          borderRadius={{ xs: "10px", sm: 0 }}
+        >
+          <img height={341} src={Judge4} alt="4" />
+        </Box>
+        <Box
+          width={{ xs: 120, sm: 270 }}
+          height={{ xs: 168, sm: 341 }}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          overflow={"hidden"}
+          borderRadius={{ xs: "10px", sm: 0 }}
+        >
+          <img height={"100%"} src={Judge5} alt="4" />
+        </Box>
+      </Stack>
+    </Box>,
+    <Box width={"100%"} overflow={"hidden"} style={{ overflowX: "scroll" }}>
+      <Stack
+        direction="row"
+        justifyContent={"space-between"}
+        gap={3}
+        flexWrap={"wrap"}
+      >
+        <Box
+          width={{ xs: 120, sm: 270 }}
+          height={{ xs: 168, sm: "100%" }}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          overflow={"hidden"}
+          borderRadius={{ xs: "10px", sm: 0 }}
+        >
+          <img height={341} src={Judge1} alt="1" />
+        </Box>
+        <Box
+          width={{ xs: 120, sm: 270 }}
+          height={{ xs: 168, sm: "100%" }}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          overflow={"hidden"}
+          borderRadius={{ xs: "10px", sm: 0 }}
+        >
+          <img height={341} src={speaker1} alt="2" />
+        </Box>
+        <Box
+          width={{ xs: 120, sm: 270 }}
+          height={{ xs: 168, sm: "100%" }}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          overflow={"hidden"}
+          borderRadius={{ xs: "10px", sm: 0 }}
+        >
+          <img height={341} src={Judge3} alt="3" />
+        </Box>
+        <Box
+          width={{ xs: 120, sm: 270 }}
+          height={{ xs: 168, sm: "100%" }}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          overflow={"hidden"}
+          borderRadius={{ xs: "10px", sm: 0 }}
+        >
+          <img height={341} src={Judge4} alt="4" />
+        </Box>
+        <Box
+          width={{ xs: 120, sm: 270 }}
+          height={{ xs: 168, sm: 341 }}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          overflow={"hidden"}
+          borderRadius={{ xs: "10px", sm: 0 }}
+        >
+          <img height={"100%"} src={Judge5} alt="4" />
+        </Box>
+      </Stack>
+    </Box>,
+    ,
   ];
   const CorprateData = {
     "Хамтран ажиллагч байгууллагууд": [Corprate1, Corprate2],
@@ -139,6 +272,13 @@ export const IWD2023 = () => {
       img: IWD20235Image,
     },
   ];
+
+  const TabData = {
+    Workshop: [],
+    Speaker: [speaker1, speaker2, speaker3, speaker4],
+    Mentor: [speaker4, Mentor2, Mentor3, Judge4],
+    Judges: [Judge1, speaker4, Judge3, Judge4, Judge5],
+  };
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -388,15 +528,19 @@ export const IWD2023 = () => {
             </Stack>
           </Container>
         </Stack>
-        <TabItem panel={panelComponent} />
+        <TabItem panel={panelComponent} data={TabData} />
         <Stack
-          sx={{ backgroundColor: "#F4F7FB", pb: 8 }}
+          sx={{ backgroundColor: "#F4F7FB" }}
           width="100vw"
           alignItems="center"
+          pt={6}
+          pb={8}
         >
           <Container>
-            <Title title="Холбоотой зургууд" />
-            <Album data={albumData} />
+            <Stack gap={2}>
+              <Title title="Холбоотой зургууд" />
+              <Album data={albumData} />
+            </Stack>
           </Container>
         </Stack>
         <Corprate data={CorprateData} />
@@ -404,21 +548,15 @@ export const IWD2023 = () => {
           sx={{
             width: "100vw",
             backgroundColor: "#F4F7FB",
-            pb: "120px",
           }}
           width="100%"
+          pt={4}
+          pb={10}
         >
           <Container>
-            <Title title="Сүүлд болсон арга хэмжээ" />
-            <Stack
-              direction={{ xs: "column", sm: "row" }}
-              justifyContent="space-between"
-              gap={2}
-              mt={6}
-            >
-              {LatestEventsData.map((el) => (
-                <CardItem data={el} />
-              ))}
+            <Stack gap={6}>
+              <Title title="Сүүлд болсон арга хэмжээ" />
+              <PaginationCard data={LatestEventsData} />
             </Stack>
           </Container>
         </Stack>

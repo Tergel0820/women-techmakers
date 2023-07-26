@@ -3,8 +3,6 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Button } from "../core";
 import { Stack } from "@mui/material";
-import { useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -32,18 +30,15 @@ function CustomTabPanel(props: TabPanelProps) {
   );
 }
 
-export const TabItem = ({ panel }: { panel: any }) => {
+export const TabItem = ({ data }: { data: any }) => {
   const [value, setValue] = React.useState<number>(1);
-  const theme = useTheme();
-
-  const isSmallScreen = useMediaQuery(() => theme.breakpoints.down("sm"));
 
   const handleChange = (newValue: number) => {
     setValue(newValue);
   };
 
   return (
-    <Stack spacing={{ xs: "16px", sm: 2 }} width={"100%"}>
+    <Stack gap={{ sm: 2 }} width={"100%"}>
       <Stack
         direction={"row"}
         gap={{ xs: "8px", sm: 2 }}
@@ -51,47 +46,49 @@ export const TabItem = ({ panel }: { panel: any }) => {
         justifyContent={"space-between"}
         alignItems={"center"}
       >
-        <Button
-          width={window.innerWidth < 500 && "22%"}
-          variant={value === 0 ? "primary" : "secondary"}
-          onClick={() => handleChange(0)}
-          disabled
-        >
-          Workshop
-        </Button>
-        <Button
-          width={window.innerWidth < 500 && "22%"}
-          variant={value === 1 ? "primary" : "secondary"}
-          onClick={() => handleChange(1)}
-        >
-          Speakers
-        </Button>
-        <Button
-          width={window.innerWidth < 500 && "22%"}
-          variant={value === 2 ? "primary" : "secondary"}
-          onClick={() => handleChange(2)}
-        >
-          Mentor
-        </Button>
-        <Button
-          width={window.innerWidth < 500 && "22%"}
-          variant={value === 3 ? "primary" : "secondary"}
-          onClick={() => handleChange(3)}
-        >
-          Judges
-        </Button>
+        {Object.keys(data).map((el, index) => (
+          <Button
+            width={window.innerWidth < 500 && "22%"}
+            variant={value === index ? "primary" : "secondary"}
+            onClick={() => handleChange(index)}
+            disabled={Object.values(data)[index].length === 0 ? true : false}
+          >
+            {el}
+          </Button>
+        ))}
       </Stack>
-      <Stack width={"100%"}>
-        {panel.map((item: any, index: number) => {
-          return (
-            <Stack key={index} flexWrap="wrap" flexDirection="column">
-              <CustomTabPanel value={value} index={index}>
-                {item}
-              </CustomTabPanel>
+      <Box width={"100%"} overflow={"hidden"} style={{ overflowX: "scroll" }}>
+        {Object.values(data).map((item, index) => (
+          <CustomTabPanel value={value} index={index}>
+            <Stack
+              direction="row"
+              justifyContent={"space-between"}
+              gap={{ xs: 2, sm: 3 }}
+              flexWrap={{ sm: "wrap" }}
+            >
+              {item.map((e) => (
+                <Box
+                  width={270}
+                  height={{ xs: 168, sm: 341 }}
+                  minWidth={120}
+                  display={"flex"}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                  overflow={"hidden"}
+                  borderRadius={{ xs: "10px", sm: 0 }}
+                >
+                  <img
+                    height={"100%"}
+                    src={e}
+                    alt="1"
+                    style={{ objectFit: "cover" }}
+                  />
+                </Box>
+              ))}
             </Stack>
-          );
-        })}
-      </Stack>
+          </CustomTabPanel>
+        ))}
+      </Box>
     </Stack>
   );
 };

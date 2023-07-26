@@ -34,11 +34,23 @@ export const Album = ({
               startSmall
                 ? {
                     height:
-                      index === 1 || index === 2 || index === 5 ? 480 : 240,
+                      window.innerWidth > 500
+                        ? index === 1 || index === 2 || index === 5
+                          ? 480
+                          : 240
+                        : index === 1 || index === 2 || index === 5
+                        ? 240
+                        : 120,
                   }
                 : {
                     height:
-                      index === 0 || index === 3 || index === 4 ? 480 : 240,
+                      window.innerWidth > 500
+                        ? index === 0 || index === 3 || index === 4
+                          ? 480
+                          : 240
+                        : index === 0 || index === 3 || index === 4
+                        ? 240
+                        : 120,
                   }
             }
           >
