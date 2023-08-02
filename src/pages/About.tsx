@@ -74,6 +74,7 @@ export const About = () => {
                   fontSize={20}
                   fontWeight={400}
                   textAlign={{ xs: "center", sm: "start" }}
+                  lineHeight={"150%"}
                 >
                   Google компанийн дэргэдэх технологийн салбарын эмэгтэйчүүдийг
                   дэмжих зорилготой Women Techmakers хөтөлбөрийг Монголд 2021
@@ -84,6 +85,7 @@ export const About = () => {
                   fontSize={20}
                   fontWeight={400}
                   textAlign={{ xs: "center", sm: "start" }}
+                  lineHeight={"150%"}
                 >
                   Бид технологийн салбарын болон салбарт сонирхолтой охид
                   эмэгтэйчүүдийг дэмжих, дэлхий нийтэд дуу хоолойг нь хүргэх,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./layout";
 import {
@@ -17,20 +17,13 @@ import "./index.css";
 import ThemeProvider from "./theme";
 
 const Router = () => {
-  const [offset, setOffset] = useState<number>(0);
-
-  useEffect(() => {
-    const onScroll = () => setOffset(window.pageYOffset);
-    window.removeEventListener("scroll", onScroll);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  document.title = "Women Techmakers";
 
   return (
     <ThemeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout offset={offset} />}>
+          <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/event" element={<Events />} />
             <Route path="/event/:id" element={<EventDetail />} />

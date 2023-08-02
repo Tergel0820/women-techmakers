@@ -1,5 +1,5 @@
 import { Box, Container, Popover, Stack, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { LogoHeader, MenuIcon } from "../assets";
 import MobileLogo from "../assets/image/mobileLogo.png";
@@ -11,22 +11,6 @@ export const Header = ({ theme }: { theme: string }) => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
   const [menu, setMenu] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.pageYOffset > window.innerHeight) {
-        document.body.style.textEmphasisColor = "#000";
-      } else {
-        document.body.style.textEmphasisColor = "#000";
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -46,19 +30,12 @@ export const Header = ({ theme }: { theme: string }) => {
       style={{
         color: theme === "transparent" ? "#fff" : "#000",
         backgroundColor: theme,
-        transitionDuration: "0s",
+        transitionDuration: "0.2s",
         width: "100%",
       }}
     >
       <Container>
-        <Stack
-          sx={{
-            transitionDuration: "1s",
-            backgroundColor: theme,
-          }}
-          pt={{ xs: 0, sm: 3 }}
-          pb={{ xs: 0, sm: 3 }}
-        >
+        <Stack pt={{ xs: 0, sm: 3 }} pb={{ xs: 0, sm: 3 }}>
           <Stack
             direction="row"
             width={"100%"}
@@ -72,7 +49,9 @@ export const Header = ({ theme }: { theme: string }) => {
                 justifyContent={"center"}
                 alignItems={"center"}
               >
-                <LogoHeader />
+                <Link to={"/"}>
+                  <LogoHeader />
+                </Link>
               </Box>
             ) : (
               <Box
@@ -289,7 +268,7 @@ const style = {
     flexDirection: "row",
     alignItems: "center",
     gap: 2,
-    // transitionDuration: "1s",
+    transitionDuration: "0.2s",
     "& > p": {
       position: "relative",
       display: "inline-block",
@@ -307,7 +286,7 @@ const style = {
       },
       "&:hover": {
         "&::before": {
-          width: " 100%",
+          width: "100%",
         },
       },
     },

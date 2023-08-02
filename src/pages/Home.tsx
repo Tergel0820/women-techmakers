@@ -1,13 +1,6 @@
 import { Box, Container, Stack, Typography, CardMedia } from "@mui/material";
-import React, { useEffect } from "react";
-import {
-  AboutUs,
-  Activity,
-  Button,
-  CardItem,
-  PaginationCard,
-  Title,
-} from "../components";
+import React, { useEffect, useState } from "react";
+import { AboutUs, Activity, Button, PaginationCard } from "../components";
 import homeback from "../assets/image/background.png";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PublicIcon from "@mui/icons-material/Public";
@@ -31,7 +24,7 @@ import Card1 from "../assets/image/card1.png";
 import Card2 from "../assets/image/card2.png";
 import Card3 from "../assets/image/card3.png";
 import "../styles/arrow-down.css";
-import { Header, Loading } from "layout";
+import { Header } from "layout";
 import { Curve } from "assets/icon/curve";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
@@ -146,8 +139,17 @@ export const Home = () => {
     },
   ];
 
+  const [offset, setOffset] = useState<number>(0);
+
   useEffect(() => {
     window.scrollTo({ top: 0 });
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setOffset(window.pageYOffset);
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -165,26 +167,31 @@ export const Home = () => {
             height={{ xs: 271, sm: "100vh", md: "100vh" }}
             justifyContent={"center"}
             alignItems={"center"}
-            gap={3}
             zIndex={1}
             style={{
               background:
                 "linear-gradient(180deg, rgba(123, 149, 197, 0.9) 0%, rgba(39, 72, 127, 0.9) 100%)",
             }}
           >
-            <Stack
-              display={{ xs: "none", sm: "flex", md: "flex" }}
-              position={"absolute"}
-              top={0}
-              width={"100%"}
-            >
-              <Header theme="transparent" />
+            <Stack position={"fixed"} top={0} width={"100%"} zIndex={2}>
+              <Header
+                theme={
+                  window.innerWidth > 600
+                    ? offset < 550
+                      ? "transparent"
+                      : "white"
+                    : "white"
+                }
+              />
             </Stack>
             <Typography
               color={"#FDFEFE"}
               fontSize={{ xs: 24, sm: 24, md: 70 }}
               fontWeight={500}
               textAlign={"center"}
+              fontFamily={"Google Sans Medium"}
+              letterSpacing={"-1.5px"}
+              lineHeight={"120%"}
             >
               Women Techmakers Mongolia
             </Typography>
@@ -193,6 +200,7 @@ export const Home = () => {
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
+              mt={{ xs: "18px", sm: "21px" }}
             >
               <TypeAnimation
                 sequence={["", 800, "Хүн болгон технологи бүтээж чадна"]}
@@ -210,21 +218,20 @@ export const Home = () => {
                 }}
               />
             </Stack>
-            <Link
-              to={"/event"}
-              style={{ zIndex: 1, textDecoration: "none", marginTop: "16px" }}
-            >
-              <Button
-                sx={{
-                  backgroundColor: "white",
-                  borderColor: "white",
-                  color: "black",
-                }}
-                variant="secondary"
-              >
-                Event-д бүртгүүлэх
-              </Button>
-            </Link>
+            <Box mt={{ xs: "41px", sm: "55px" }} zIndex={1}>
+              <Link to={"/event"} style={{ textDecoration: "none" }}>
+                <Button
+                  sx={{
+                    backgroundColor: "white",
+                    borderColor: "white",
+                    color: "black",
+                  }}
+                  variant="secondary"
+                >
+                  Event-д бүртгүүлэх
+                </Button>
+              </Link>
+            </Box>
             <Stack
               display={{ xs: "none", sm: "flex", md: "flex" }}
               position={"absolute"}
@@ -242,18 +249,18 @@ export const Home = () => {
             <Curve />
           </Box>
         </CardMedia>
-        <Stack
+        {/* <Stack
           width={"100vw"}
           position={{ xs: "fixed", sm: "sticky" }}
           top={0}
           zIndex={1}
         >
           <Header theme="white" />
-        </Stack>
+        </Stack> */}
         {/* -------------------------------------Бидний тухай--------------------------------- */}
         <Stack
           direction={{ xs: "column", sm: "row" }}
-          marginTop={{ xs: 4, sm: 12 }}
+          marginTop={{ xs: 4, sm: 16 }}
           justifyContent={"space-between"}
           width="100%"
           gap={3}
@@ -327,7 +334,12 @@ export const Home = () => {
           pb={{ sm: "100px" }}
         >
           <Container>
-            <Typography fontSize={{ xs: 20, sm: 31 }} fontWeight={500}>
+            <Typography
+              fontSize={{ xs: 20, sm: 31 }}
+              fontWeight={500}
+              lineHeight={"150%"}
+              letterSpacing={"0.44px"}
+            >
               Зорилго
             </Typography>
             <Stack

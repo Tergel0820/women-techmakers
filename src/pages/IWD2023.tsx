@@ -9,6 +9,7 @@ import {
 } from "../components";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Player } from "@lottiefiles/react-lottie-player";
 import HackethonImage from "../assets/image/hackathon.png";
 import IWD2023Image from "../assets/image/iwd2023image.png";
 import IWD20231Image from "../assets/image/iwd20231.png";
@@ -41,6 +42,8 @@ import Corprate8 from "../assets/image/corprate8.png";
 import Card1 from "../assets/image/card1.png";
 import Card2 from "../assets/image/card2.png";
 import Card3 from "../assets/image/card3.png";
+import LocationLottie from "../assets/image/locationLottie.json";
+import CalendarLottie from "../assets/image/calendarLottie.json";
 
 export const IWD2023 = () => {
   const CorprateData = {
@@ -219,7 +222,7 @@ export const IWD2023 = () => {
             <Stack
               direction="row"
               alignItems="center"
-              flexWrap="wrap"
+              gap={"20px"}
               justifyContent={{ xs: "center", sm: "flex-start" }}
             >
               <Box
@@ -230,12 +233,7 @@ export const IWD2023 = () => {
                 justifyContent={"center"}
                 alignItems={"center"}
               >
-                <img
-                  alt=""
-                  src="https://s3-alpha-sig.figma.com/img/3a7d/3a7d/a00b013573376e1245f208a45d95f63a?Expires=1690761600&Signature=qz~BpmuiPgdkvwM4cJK-KTEATKX6Sh-CAi0FFoxuFvOVpCTNEsrIVsyBbHCpkvNKqUEYG5KtPaMIwuYm0ckwVlOlrwZZdeYKHbGot7EJsFwjCXGGevwEsvsmLmvgDd1QUJfzwTHqIYLnOcNUMsc2RoknxwkB6xHgRaoQkofXI5DyFJ8P4D1uTizraWB7GnFh2yQaFDWCXg5p1wDxaV41DkMkdxgAxjX1LsTeOgz1U177FFroJDLedNAhgVn7iHIX3k~SQFvec7YWTRqSE6Xb8tnUC4jP1FUkQ8l3OacRSfAbKordfefo7SONE3zBJA3zVwv7qlpsTysOITVUKomNnA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
-                  width="60px"
-                  height="60px"
-                />
+                <Player src={LocationLottie} autoplay loop />
               </Box>
               <Typography
                 fontSize={{ xs: "16px", sm: "25px" }}
@@ -246,8 +244,8 @@ export const IWD2023 = () => {
             </Stack>
             <Stack
               direction="row"
-              flexWrap="wrap"
               alignItems="center"
+              gap={"20px"}
               justifyContent={{ xs: "center", sm: "flex-start" }}
             >
               <Box
@@ -258,11 +256,11 @@ export const IWD2023 = () => {
                 justifyContent={"center"}
                 alignItems={"center"}
               >
-                <img
-                  alt=""
-                  src="https://s3-alpha-sig.figma.com/img/88d0/c7e9/1cf605c82e878025bb81091a95886ed1?Expires=1690761600&Signature=Kni8j4sv1xy~BeBpc4gkfsMd5z2E01aIVw9Ng519wgvaO4IarJTqqT9B2lCQkgkCTplH~8zNP5~cj-XUlErujj3i5Zj8tB1DFozD-55yyl5QwAcZcBZaCg~1t9B64t2qoRKSxW2-1WJfvVJxwduwRQz72pZIrP1Kq8QYQR53WD76i7atAftA-F1UJ7TMq8WWTG0hYwI~tPkkdBqkfDJjlHcG3QC7C0~2IdNf0v~HcEff1gWaZSO6EPQXIrvjdBYCahcyRFCoNhjCs5IG9r2wUwXyku3lf3G7d~rXzq1kkVbKSHlL8Y5x831YfvG2qyggTcNBRuDe5fYlW3-cDD2BZQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
-                  width="100px"
-                  height="50px"
+                <Player
+                  style={{ height: "100%", transform: "scale(1.6)" }}
+                  src={CalendarLottie}
+                  autoplay
+                  loop
                 />
               </Box>
               <Typography

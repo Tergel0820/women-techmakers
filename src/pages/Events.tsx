@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
 import { Container, Stack, Typography } from "@mui/material";
-import { CardItem, PaginationCard, Title } from "../components";
+import { PaginationCard, Title } from "../components";
 import Meeting10 from "../assets/image/meeting10.png";
 import WeeklyMeeting9 from "../assets/image/weeklyMeeting9.png";
 import WeeklyMeeting8 from "../assets/image/weeklyMeeting8.png";
 import WeeklyMeeting7 from "../assets/image/weeklyMeeting7.png";
+import WeeklyMeeting6 from "../assets/image/weeklyMeeting6.png";
+import WeeklyMeeting5 from "../assets/image/weeklyMeeting5.png";
+import WeeklyMeeting3 from "../assets/image/weeklyMeeting3.png";
+import WeeklyMeeting2 from "../assets/image/weeklyMeeting2.png";
+import WeeklyMeeting1 from "../assets/image/weeklyMeeting1.png";
 import Card1 from "../assets/image/card1.png";
 import Card2 from "../assets/image/card2.png";
 import Card3 from "../assets/image/card3.png";
@@ -48,6 +53,46 @@ export const Events = () => {
       name: "Namuun Togoobor#8584",
       location: "Our Discord channel",
       date: "2023, march, 19:00",
+    },
+    {
+      title: "Little abaout UX/UI",
+      image: WeeklyMeeting6,
+      meeting: "Weekly_Meeting#6",
+      name: "duuuk#1704",
+      location: "Our Discord channel",
+      date: "2023 Jan 12, 19:00",
+    },
+    {
+      title: "Game Tech",
+      image: WeeklyMeeting5,
+      meeting: "Weekly_Meeting#5",
+      name: "Yesui#5728",
+      location: "Our Discord channel",
+      date: "2023 Jan 5, 19:00",
+    },
+    {
+      title: "Dijital Nomad",
+      image: WeeklyMeeting3,
+      meeting: "Weekly_Meeting#3",
+      name: "GDG Ulaanbaatar, WTM Mongolia",
+      location: "Our Discord channel",
+      date: "2022 Dec 1, 19:00",
+    },
+    {
+      title: "Web developer Intro",
+      image: WeeklyMeeting2,
+      meeting: "Weekly_Meeting#2",
+      name: "Zulaa#4221",
+      location: "Our Discord channel",
+      date: "2022 Nov 24, 19:00",
+    },
+    {
+      title: "Why do we need to be here",
+      image: WeeklyMeeting1,
+      meeting: "Weekly_Meeting#1",
+      name: "Namuun Togoobor#8584",
+      location: "Our Discord channel",
+      date: "2022 Nov 17, 19:00",
     },
   ];
   const MonthlyMeetingsData = [

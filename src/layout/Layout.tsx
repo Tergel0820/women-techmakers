@@ -1,10 +1,10 @@
 import { Box, Stack } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
-export const Layout = ({ offset }: { offset: number }) => {
+export const Layout = () => {
   const location = useLocation();
   const showFooterOnRoutes = [
     "/",

@@ -168,10 +168,7 @@ export const Footer = () => {
                   Монгол улс, Улаанбаатар хот
                 </Typography>
                 <Typography sx={{ color: "#D7D7D7", fontSize: "14px", mb: 1 }}>
-                  Утас
-                </Typography>
-                <Typography sx={{ color: "#D7D7D7", fontSize: "14px", mb: 1 }}>
-                  И-мэйл хаяг
+                  wtmmongolia@gmail.com
                 </Typography>
                 <Stack direction="row" gap={2} mt={2}>
                   <Link to={"https://www.facebook.com/wtmmongolia"}>
@@ -213,7 +210,7 @@ export const Footer = () => {
                         height: "52.7px",
                         borderRadius: "50%",
                         border: "0.53px solid #fff",
-                        padding: "12px",
+                        padding: "14px",
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
@@ -297,24 +294,41 @@ export const Footer = () => {
           </Stack>
         </Container>
       )}
-      <Container style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+      <Container
+        style={{
+          paddingTop: "10px",
+          paddingBottom: window.innerWidth < 600 ? "160px" : "10px",
+        }}
+      >
         <Typography
           color={"#496AC0"}
-          fontSize={14}
-          fontWeight={500}
           display={"flex"}
           textAlign={{ xs: "center", sm: "start" }}
           flexWrap={{ xs: "wrap", sm: "default" }}
-          gap={{ xs: 0, sm: "12px" }}
+          gap={{ xs: 1, sm: "12px" }}
           justifyContent={{ xs: "center", sm: "flex-start" }}
         >
-          <Typography>Copyright 2021-2023</Typography>
-          <Typography> | </Typography>
-          <Typography>Women Techmakers</Typography>
-          <Typography> | </Typography>
-          <Typography>All Right Reserved</Typography>
-          <Typography> | </Typography>
-          <Typography>Powered by Google</Typography>
+          <Typography fontSize={{ xs: 16, sm: 14 }} fontWeight={600}>
+            Copyright 2021-2023
+          </Typography>
+          <Typography fontSize={{ xs: 16, sm: 14 }} fontWeight={600}>
+            |
+          </Typography>
+          <Typography fontSize={{ xs: 16, sm: 14 }} fontWeight={600}>
+            Women Techmakers
+          </Typography>
+          <Typography fontSize={{ xs: 16, sm: 14 }} fontWeight={600}>
+            |
+          </Typography>
+          <Typography fontSize={{ xs: 16, sm: 14 }} fontWeight={600}>
+            All Right Reserved
+          </Typography>
+          <Typography fontSize={{ xs: 16, sm: 14 }} fontWeight={600}>
+            |
+          </Typography>
+          <Typography fontSize={{ xs: 16, sm: 14 }} fontWeight={600}>
+            Powered by Google
+          </Typography>
         </Typography>
       </Container>
     </Container>
