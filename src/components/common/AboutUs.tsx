@@ -32,7 +32,11 @@ export const AboutUs = ({ data }: { data: AboutType }) => {
         >
           {data.number}
         </Typography>
-        <Typography fontSize={{ xs: 15.5, sm: 22 }} fontWeight={300}>
+        <Typography
+          fontSize={{ xs: 15.5, sm: 22 }}
+          fontWeight={300}
+          whiteSpace={"nowrap"}
+        >
           {data.text}
         </Typography>
       </Stack>

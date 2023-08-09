@@ -60,7 +60,9 @@ export const Header = ({ theme }: { theme: string }) => {
                 justifyContent={"center"}
                 alignItems={"center"}
               >
-                <img height={"100%"} src={MobileLogo} />
+                <Link to={"/"} style={{ height: "100%" }}>
+                  <img height={"100%"} src={MobileLogo} />
+                </Link>
               </Box>
             )}
             <Box sx={{ ...style.navbar }} display={{ xs: "none", sm: "flex" }}>

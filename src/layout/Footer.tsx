@@ -289,7 +289,7 @@ export const Footer = () => {
               Хамтран ажиллах
             </Typography>
             <Typography textAlign={"center"} fontSize={16} fontWeight={600}>
-              Холбоо барих
+              wtmmongolia@gmail.com
             </Typography>
           </Stack>
         </Container>
